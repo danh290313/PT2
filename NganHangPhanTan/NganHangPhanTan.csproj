@@ -1,0 +1,340 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECCD0277-6277-4079-87FC-29299384AA4E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NganHangPhanTan</RootNamespace>
+    <AssemblyName>NganHangPhanTan</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.2" />
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BrandDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DS.cs">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Brand.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\Employee.cs" />
+    <Compile Include="DTO\ExchangeEndpoint.cs" />
+    <Compile Include="DTO\ExchangeTransaction.cs" />
+    <Compile Include="DTO\User.cs" />
+    <Compile Include="Report\fReportAccountDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\fReportAccountDetail.Designer.cs">
+      <DependentUpon>fReportAccountDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\fReportOpenedAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\fReportOpenedAccount.Designer.cs">
+      <DependentUpon>fReportOpenedAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\fReportTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\fReportTransaction.Designer.cs">
+      <DependentUpon>fReportTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportAccountDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportAccountDetail.Designer.cs">
+      <DependentUpon>ReportAccountDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportOpenedAccountAllBrand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportOpenedAccountAllBrand.Designer.cs">
+      <DependentUpon>ReportOpenedAccountAllBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportOpenedAccountByBrand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportOpenedAccountByBrand.Designer.cs">
+      <DependentUpon>ReportOpenedAccountByBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportTransaction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportTransaction.Designer.cs">
+      <DependentUpon>ReportTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fChangeEndpointsExchangeTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fChangeEndpointsExchangeTrans.Designer.cs">
+      <DependentUpon>fChangeEndpointsExchangeTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fCreateLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fCreateLogin.Designer.cs">
+      <DependentUpon>fCreateLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fCustomerManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fCustomerManage.Designer.cs">
+      <DependentUpon>fCustomerManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fEmployeeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fEmployeeManage.Designer.cs">
+      <DependentUpon>fEmployeeManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fEmployeeMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fEmployeeMove.Designer.cs">
+      <DependentUpon>fEmployeeMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleForm\fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fOpenCustomerAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fOpenCustomerAccount.Designer.cs">
+      <DependentUpon>fOpenCustomerAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fTransExchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fTransExchange.Designer.cs">
+      <DependentUpon>fTransExchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\fTransSendWithdrawal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\fTransSendWithdrawal.Designer.cs">
+      <DependentUpon>fTransSendWithdrawal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserEventData.cs" />
+    <Compile Include="Util\MessageUtil.cs" />
+    <Compile Include="Util\ControlUtil.cs" />
+    <Compile Include="Util\SecurityContext.cs" />
+    <EmbeddedResource Include="Report\fReportAccountDetail.resx">
+      <DependentUpon>fReportAccountDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\fReportOpenedAccount.resx">
+      <DependentUpon>fReportOpenedAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\fReportTransaction.resx">
+      <DependentUpon>fReportTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportAccountDetail.resx">
+      <DependentUpon>ReportAccountDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportOpenedAccountAllBrand.resx">
+      <DependentUpon>ReportOpenedAccountAllBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportOpenedAccountByBrand.resx">
+      <DependentUpon>ReportOpenedAccountByBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportTransaction.resx">
+      <DependentUpon>ReportTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fChangeEndpointsExchangeTrans.resx">
+      <DependentUpon>fChangeEndpointsExchangeTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fCreateLogin.resx">
+      <DependentUpon>fCreateLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fCustomerManage.resx">
+      <DependentUpon>fCustomerManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fEmployeeManage.resx">
+      <DependentUpon>fEmployeeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fEmployeeMove.resx">
+      <DependentUpon>fEmployeeMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SimpleForm\fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fOpenCustomerAccount.resx">
+      <DependentUpon>fOpenCustomerAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fTransExchange.resx">
+      <DependentUpon>fTransExchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\fTransSendWithdrawal.resx">
+      <DependentUpon>fTransSendWithdrawal.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="DS.xsc">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </None>
+    <None Include="DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS.xss">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resource\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\door-key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\account_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\deposit_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\exchange_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\withdrawal_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\sign-in.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
