@@ -53,7 +53,7 @@ namespace NganHangPhanTan
             this.label1.Location = new System.Drawing.Point(15, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 23);
+            this.label1.Size = new System.Drawing.Size(113, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi nhánh:";
             // 
@@ -61,9 +61,9 @@ namespace NganHangPhanTan
             // 
             this.cbBrand.FormattingEnabled = true;
             this.cbBrand.Location = new System.Drawing.Point(197, 34);
-            this.cbBrand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbBrand.Margin = new System.Windows.Forms.Padding(4);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(363, 31);
+            this.cbBrand.Size = new System.Drawing.Size(363, 36);
             this.cbBrand.TabIndex = 1;
             // 
             // panel1
@@ -71,7 +71,7 @@ namespace NganHangPhanTan
             this.panel1.Controls.Add(this.cbBrand);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(15, 17);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(589, 93);
             this.panel1.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace NganHangPhanTan
             this.panel2.Controls.Add(this.txbLoginName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(15, 119);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(589, 93);
             this.panel2.TabIndex = 3;
@@ -89,11 +89,11 @@ namespace NganHangPhanTan
             // txbLoginName
             // 
             this.txbLoginName.Location = new System.Drawing.Point(197, 34);
-            this.txbLoginName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbLoginName.Margin = new System.Windows.Forms.Padding(4);
             this.txbLoginName.Name = "txbLoginName";
-            this.txbLoginName.Size = new System.Drawing.Size(363, 30);
+            this.txbLoginName.Size = new System.Drawing.Size(363, 35);
             this.txbLoginName.TabIndex = 1;
-            this.txbLoginName.Text = "0PWLXBTIZP";
+            this.txbLoginName.Text = "HL";
             // 
             // label2
             // 
@@ -101,14 +101,14 @@ namespace NganHangPhanTan
             this.label2.Location = new System.Drawing.Point(15, 34);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 23);
+            this.label2.Size = new System.Drawing.Size(156, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên đăng nhập:";
             // 
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(130, 14);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(156, 53);
             this.btnLogin.TabIndex = 6;
@@ -119,7 +119,7 @@ namespace NganHangPhanTan
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(313, 14);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(153, 53);
             this.btnExit.TabIndex = 7;
@@ -132,7 +132,7 @@ namespace NganHangPhanTan
             this.panel3.Controls.Add(this.txbPass);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(15, 221);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(589, 93);
             this.panel3.TabIndex = 8;
@@ -140,11 +140,11 @@ namespace NganHangPhanTan
             // txbPass
             // 
             this.txbPass.Location = new System.Drawing.Point(197, 34);
-            this.txbPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPass.Margin = new System.Windows.Forms.Padding(4);
             this.txbPass.Name = "txbPass";
-            this.txbPass.Size = new System.Drawing.Size(363, 30);
+            this.txbPass.Size = new System.Drawing.Size(363, 35);
             this.txbPass.TabIndex = 1;
-            this.txbPass.Text = "123";
+            this.txbPass.Text = "123456";
             this.txbPass.UseSystemPasswordChar = true;
             // 
             // label3
@@ -153,7 +153,7 @@ namespace NganHangPhanTan
             this.label3.Location = new System.Drawing.Point(15, 34);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 23);
+            this.label3.Size = new System.Drawing.Size(106, 30);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mật khẩu:";
             // 
@@ -169,15 +169,15 @@ namespace NganHangPhanTan
             // fLogin
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 464);
+            this.ClientSize = new System.Drawing.Size(648, 464);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fLogin";
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.fLogin_Load);

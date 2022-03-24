@@ -40,6 +40,7 @@ namespace NganHangPhanTan.DAO
         public bool HavingAnyTransaction(string accountId)
         {
             return (bool)DataProvider.Instance.ExecuteScalar($"SELECT dbo.udf_CheckAccountHavingTransaction('{accountId}')");
+            
         }
 
         /// <summary>

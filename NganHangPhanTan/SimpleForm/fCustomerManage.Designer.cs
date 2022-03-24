@@ -106,7 +106,7 @@ namespace NganHangPhanTan.SimpleForm
             cMNDLabel.Location = new System.Drawing.Point(46, 53);
             cMNDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             cMNDLabel.Name = "cMNDLabel";
-            cMNDLabel.Size = new System.Drawing.Size(65, 23);
+            cMNDLabel.Size = new System.Drawing.Size(81, 30);
             cMNDLabel.TabIndex = 0;
             cMNDLabel.Text = "CMND:";
             // 
@@ -117,7 +117,7 @@ namespace NganHangPhanTan.SimpleForm
             hOLabel.Location = new System.Drawing.Point(414, 56);
             hOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(66, 23);
+            hOLabel.Size = new System.Drawing.Size(81, 30);
             hOLabel.TabIndex = 2;
             hOLabel.Text = "Họ tên:";
             // 
@@ -128,7 +128,7 @@ namespace NganHangPhanTan.SimpleForm
             dIACHILabel.Location = new System.Drawing.Point(46, 121);
             dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(66, 23);
+            dIACHILabel.Size = new System.Drawing.Size(82, 30);
             dIACHILabel.TabIndex = 5;
             dIACHILabel.Text = "Địa chỉ:";
             // 
@@ -139,7 +139,7 @@ namespace NganHangPhanTan.SimpleForm
             pHAILabel.Location = new System.Drawing.Point(58, 190);
             pHAILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             pHAILabel.Name = "pHAILabel";
-            pHAILabel.Size = new System.Drawing.Size(47, 23);
+            pHAILabel.Size = new System.Drawing.Size(58, 30);
             pHAILabel.TabIndex = 7;
             pHAILabel.Text = "Phái:";
             // 
@@ -150,7 +150,7 @@ namespace NganHangPhanTan.SimpleForm
             nGAYCAPLabel.Location = new System.Drawing.Point(335, 190);
             nGAYCAPLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nGAYCAPLabel.Name = "nGAYCAPLabel";
-            nGAYCAPLabel.Size = new System.Drawing.Size(86, 23);
+            nGAYCAPLabel.Size = new System.Drawing.Size(106, 30);
             nGAYCAPLabel.TabIndex = 9;
             nGAYCAPLabel.Text = "Ngày cấp:";
             // 
@@ -161,7 +161,7 @@ namespace NganHangPhanTan.SimpleForm
             sODTLabel.Location = new System.Drawing.Point(716, 190);
             sODTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sODTLabel.Name = "sODTLabel";
-            sODTLabel.Size = new System.Drawing.Size(59, 23);
+            sODTLabel.Size = new System.Drawing.Size(73, 30);
             sODTLabel.TabIndex = 11;
             sODTLabel.Text = "Số ĐT:";
             // 
@@ -172,7 +172,7 @@ namespace NganHangPhanTan.SimpleForm
             mACNLabel.Location = new System.Drawing.Point(1137, 53);
             mACNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mACNLabel.Name = "mACNLabel";
-            mACNLabel.Size = new System.Drawing.Size(67, 23);
+            mACNLabel.Size = new System.Drawing.Size(83, 30);
             mACNLabel.TabIndex = 13;
             mACNLabel.Text = "Mã CN:";
             // 
@@ -181,7 +181,7 @@ namespace NganHangPhanTan.SimpleForm
             this.panelControl1.Controls.Add(this.cbBrand);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 30);
+            this.panelControl1.Location = new System.Drawing.Point(0, 34);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1512, 84);
@@ -194,7 +194,7 @@ namespace NganHangPhanTan.SimpleForm
             this.cbBrand.Location = new System.Drawing.Point(136, 28);
             this.cbBrand.Margin = new System.Windows.Forms.Padding(4);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(502, 31);
+            this.cbBrand.Size = new System.Drawing.Size(502, 36);
             this.cbBrand.TabIndex = 1;
             this.cbBrand.SelectionChangeCommitted += new System.EventHandler(this.cbBrand_SelectionChangeCommitted);
             // 
@@ -205,7 +205,7 @@ namespace NganHangPhanTan.SimpleForm
             this.label1.Location = new System.Drawing.Point(22, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 23);
+            this.label1.Size = new System.Drawing.Size(113, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi nhánh:";
             // 
@@ -238,11 +238,11 @@ namespace NganHangPhanTan.SimpleForm
             this.gcCustomer.DataSource = this.bdsCustomer;
             this.gcCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcCustomer.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.gcCustomer.Location = new System.Drawing.Point(0, 114);
+            this.gcCustomer.Location = new System.Drawing.Point(0, 118);
             this.gcCustomer.MainView = this.gridView1;
             this.gcCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.gcCustomer.Name = "gcCustomer";
-            this.gcCustomer.Size = new System.Drawing.Size(1512, 546);
+            this.gcCustomer.Size = new System.Drawing.Size(1512, 409);
             this.gcCustomer.TabIndex = 10;
             this.gcCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -398,10 +398,10 @@ namespace NganHangPhanTan.SimpleForm
             this.pnInput.Controls.Add(hOLabel);
             this.pnInput.Controls.Add(cMNDLabel);
             this.pnInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnInput.Location = new System.Drawing.Point(0, 660);
+            this.pnInput.Location = new System.Drawing.Point(0, 527);
             this.pnInput.Margin = new System.Windows.Forms.Padding(4);
             this.pnInput.Name = "pnInput";
-            this.pnInput.Size = new System.Drawing.Size(1512, 382);
+            this.pnInput.Size = new System.Drawing.Size(1512, 512);
             this.pnInput.TabIndex = 15;
             // 
             // txbPhoneNum
@@ -411,7 +411,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbPhoneNum.Location = new System.Drawing.Point(796, 185);
             this.txbPhoneNum.Margin = new System.Windows.Forms.Padding(4);
             this.txbPhoneNum.Name = "txbPhoneNum";
-            this.txbPhoneNum.Size = new System.Drawing.Size(297, 30);
+            this.txbPhoneNum.Size = new System.Drawing.Size(297, 35);
             this.txbPhoneNum.TabIndex = 19;
             // 
             // txbAddress
@@ -421,7 +421,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbAddress.Location = new System.Drawing.Point(127, 116);
             this.txbAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txbAddress.Name = "txbAddress";
-            this.txbAddress.Size = new System.Drawing.Size(966, 30);
+            this.txbAddress.Size = new System.Drawing.Size(966, 35);
             this.txbAddress.TabIndex = 18;
             // 
             // txbBrandId
@@ -432,7 +432,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbBrandId.Location = new System.Drawing.Point(1212, 50);
             this.txbBrandId.Margin = new System.Windows.Forms.Padding(4);
             this.txbBrandId.Name = "txbBrandId";
-            this.txbBrandId.Size = new System.Drawing.Size(225, 30);
+            this.txbBrandId.Size = new System.Drawing.Size(225, 35);
             this.txbBrandId.TabIndex = 17;
             // 
             // txbFirstName
@@ -442,7 +442,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbFirstName.Location = new System.Drawing.Point(905, 50);
             this.txbFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txbFirstName.Name = "txbFirstName";
-            this.txbFirstName.Size = new System.Drawing.Size(188, 30);
+            this.txbFirstName.Size = new System.Drawing.Size(188, 35);
             this.txbFirstName.TabIndex = 16;
             // 
             // txbLastName
@@ -452,7 +452,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbLastName.Location = new System.Drawing.Point(494, 49);
             this.txbLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txbLastName.Name = "txbLastName";
-            this.txbLastName.Size = new System.Drawing.Size(403, 30);
+            this.txbLastName.Size = new System.Drawing.Size(403, 35);
             this.txbLastName.TabIndex = 15;
             // 
             // txbId
@@ -462,7 +462,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbId.Location = new System.Drawing.Point(127, 49);
             this.txbId.Margin = new System.Windows.Forms.Padding(4);
             this.txbId.Name = "txbId";
-            this.txbId.Size = new System.Drawing.Size(246, 30);
+            this.txbId.Size = new System.Drawing.Size(246, 35);
             this.txbId.TabIndex = 14;
             // 
             // deDateAccept
@@ -479,7 +479,7 @@ namespace NganHangPhanTan.SimpleForm
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deDateAccept.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deDateAccept.Size = new System.Drawing.Size(212, 30);
+            this.deDateAccept.Size = new System.Drawing.Size(212, 36);
             this.deDateAccept.TabIndex = 10;
             // 
             // barManager1
@@ -613,13 +613,13 @@ namespace NganHangPhanTan.SimpleForm
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.barDockControlTop.Size = new System.Drawing.Size(1512, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1512, 34);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1042);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1039);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.barDockControlBottom.Size = new System.Drawing.Size(1512, 20);
@@ -628,19 +628,19 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 34);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1012);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1005);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1512, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1512, 34);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1012);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1005);
             // 
             // cbGender
             // 
@@ -654,15 +654,15 @@ namespace NganHangPhanTan.SimpleForm
             this.cbGender.Location = new System.Drawing.Point(127, 185);
             this.cbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(154, 31);
+            this.cbGender.Size = new System.Drawing.Size(154, 36);
             this.cbGender.TabIndex = 8;
             // 
             // fCustomerManage
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1512, 1062);
+            this.ClientSize = new System.Drawing.Size(1512, 1059);
             this.Controls.Add(this.pnInput);
             this.Controls.Add(this.gcCustomer);
             this.Controls.Add(this.panelControl1);

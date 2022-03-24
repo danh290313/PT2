@@ -111,7 +111,7 @@ namespace NganHangPhanTan.SimpleForm
             mANVLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mANVLabel.Location = new System.Drawing.Point(39, 42);
             mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(67, 23);
+            mANVLabel.Size = new System.Drawing.Size(83, 30);
             mANVLabel.TabIndex = 0;
             mANVLabel.Text = "Mã NV:";
             // 
@@ -121,7 +121,7 @@ namespace NganHangPhanTan.SimpleForm
             hOLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             hOLabel.Location = new System.Drawing.Point(407, 42);
             hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(66, 23);
+            hOLabel.Size = new System.Drawing.Size(81, 30);
             hOLabel.TabIndex = 2;
             hOLabel.Text = "Họ tên:";
             // 
@@ -131,7 +131,7 @@ namespace NganHangPhanTan.SimpleForm
             dIACHILabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dIACHILabel.Location = new System.Drawing.Point(40, 101);
             dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(66, 23);
+            dIACHILabel.Size = new System.Drawing.Size(82, 30);
             dIACHILabel.TabIndex = 6;
             dIACHILabel.Text = "Địa chỉ:";
             // 
@@ -141,7 +141,7 @@ namespace NganHangPhanTan.SimpleForm
             pHAILabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             pHAILabel.Location = new System.Drawing.Point(59, 160);
             pHAILabel.Name = "pHAILabel";
-            pHAILabel.Size = new System.Drawing.Size(47, 23);
+            pHAILabel.Size = new System.Drawing.Size(58, 30);
             pHAILabel.TabIndex = 7;
             pHAILabel.Text = "Phái:";
             // 
@@ -151,7 +151,7 @@ namespace NganHangPhanTan.SimpleForm
             sODTLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             sODTLabel.Location = new System.Drawing.Point(408, 160);
             sODTLabel.Name = "sODTLabel";
-            sODTLabel.Size = new System.Drawing.Size(59, 23);
+            sODTLabel.Size = new System.Drawing.Size(73, 30);
             sODTLabel.TabIndex = 9;
             sODTLabel.Text = "Số ĐT:";
             // 
@@ -161,7 +161,7 @@ namespace NganHangPhanTan.SimpleForm
             mACNLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mACNLabel.Location = new System.Drawing.Point(16, 216);
             mACNLabel.Name = "mACNLabel";
-            mACNLabel.Size = new System.Drawing.Size(93, 23);
+            mACNLabel.Size = new System.Drawing.Size(113, 30);
             mACNLabel.TabIndex = 11;
             mACNLabel.Text = "Chi nhánh:";
             // 
@@ -306,7 +306,7 @@ namespace NganHangPhanTan.SimpleForm
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1341, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1341, 34);
             // 
             // barDockControlBottom
             // 
@@ -321,26 +321,26 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 34);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 754);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 750);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1341, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1341, 34);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 754);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 750);
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.cbBrand);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 30);
+            this.panelControl1.Location = new System.Drawing.Point(0, 34);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1341, 74);
             this.panelControl1.TabIndex = 4;
@@ -351,7 +351,7 @@ namespace NganHangPhanTan.SimpleForm
             this.cbBrand.FormattingEnabled = true;
             this.cbBrand.Location = new System.Drawing.Point(141, 25);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(391, 31);
+            this.cbBrand.Size = new System.Drawing.Size(391, 36);
             this.cbBrand.TabIndex = 1;
             this.cbBrand.SelectionChangeCommitted += new System.EventHandler(this.cbBrand_SelectionChangeCommitted);
             // 
@@ -361,7 +361,7 @@ namespace NganHangPhanTan.SimpleForm
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(32, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 23);
+            this.label1.Size = new System.Drawing.Size(113, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi nhánh:";
             // 
@@ -402,14 +402,14 @@ namespace NganHangPhanTan.SimpleForm
             this.gcEmployee.DataSource = this.bdsEmployee;
             this.gcEmployee.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcEmployee.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.gcEmployee.Location = new System.Drawing.Point(0, 104);
+            this.gcEmployee.Location = new System.Drawing.Point(0, 108);
             this.gcEmployee.MainView = this.gvEmployee;
             this.gcEmployee.MenuManager = this.barManager1;
             this.gcEmployee.Name = "gcEmployee";
             this.gcEmployee.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemTextEdit1});
-            this.gcEmployee.Size = new System.Drawing.Size(1341, 449);
+            this.gcEmployee.Size = new System.Drawing.Size(1341, 396);
             this.gcEmployee.TabIndex = 6;
             this.gcEmployee.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEmployee});
@@ -440,7 +440,7 @@ namespace NganHangPhanTan.SimpleForm
             this.colMANV.OptionsColumn.ReadOnly = true;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 0;
-            this.colMANV.Width = 94;
+            this.colMANV.Width = 99;
             // 
             // colHO
             // 
@@ -534,9 +534,9 @@ namespace NganHangPhanTan.SimpleForm
             this.pnInput.Controls.Add(mANVLabel);
             this.pnInput.Controls.Add(this.txbId);
             this.pnInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnInput.Location = new System.Drawing.Point(0, 553);
+            this.pnInput.Location = new System.Drawing.Point(0, 504);
             this.pnInput.Name = "pnInput";
-            this.pnInput.Size = new System.Drawing.Size(1341, 231);
+            this.pnInput.Size = new System.Drawing.Size(1341, 280);
             this.pnInput.TabIndex = 7;
             // 
             // cbGender
@@ -550,7 +550,7 @@ namespace NganHangPhanTan.SimpleForm
             "Nữ"});
             this.cbGender.Location = new System.Drawing.Point(127, 157);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(142, 31);
+            this.cbGender.Size = new System.Drawing.Size(142, 36);
             this.cbGender.TabIndex = 16;
             // 
             // txbBrandId
@@ -560,7 +560,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbBrandId.Location = new System.Drawing.Point(127, 216);
             this.txbBrandId.Name = "txbBrandId";
             this.txbBrandId.ReadOnly = true;
-            this.txbBrandId.Size = new System.Drawing.Size(281, 30);
+            this.txbBrandId.Size = new System.Drawing.Size(281, 35);
             this.txbBrandId.TabIndex = 12;
             // 
             // txbPhoneNum
@@ -569,7 +569,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbPhoneNum.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPhoneNum.Location = new System.Drawing.Point(484, 157);
             this.txbPhoneNum.Name = "txbPhoneNum";
-            this.txbPhoneNum.Size = new System.Drawing.Size(231, 30);
+            this.txbPhoneNum.Size = new System.Drawing.Size(231, 35);
             this.txbPhoneNum.TabIndex = 10;
             // 
             // txbAddress
@@ -578,7 +578,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbAddress.Location = new System.Drawing.Point(127, 98);
             this.txbAddress.Name = "txbAddress";
-            this.txbAddress.Size = new System.Drawing.Size(831, 30);
+            this.txbAddress.Size = new System.Drawing.Size(831, 35);
             this.txbAddress.TabIndex = 7;
             // 
             // txbFirstName
@@ -587,7 +587,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbFirstName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbFirstName.Location = new System.Drawing.Point(803, 39);
             this.txbFirstName.Name = "txbFirstName";
-            this.txbFirstName.Size = new System.Drawing.Size(155, 30);
+            this.txbFirstName.Size = new System.Drawing.Size(155, 35);
             this.txbFirstName.TabIndex = 5;
             // 
             // txbLastName
@@ -596,7 +596,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbLastName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbLastName.Location = new System.Drawing.Point(484, 39);
             this.txbLastName.Name = "txbLastName";
-            this.txbLastName.Size = new System.Drawing.Size(313, 30);
+            this.txbLastName.Size = new System.Drawing.Size(313, 35);
             this.txbLastName.TabIndex = 3;
             // 
             // txbId
@@ -605,7 +605,7 @@ namespace NganHangPhanTan.SimpleForm
             this.txbId.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbId.Location = new System.Drawing.Point(127, 39);
             this.txbId.Name = "txbId";
-            this.txbId.Size = new System.Drawing.Size(216, 30);
+            this.txbId.Size = new System.Drawing.Size(216, 35);
             this.txbId.TabIndex = 1;
             // 
             // bdsMoneyExchange
@@ -629,7 +629,7 @@ namespace NganHangPhanTan.SimpleForm
             // fEmployeeManage
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1341, 804);
             this.Controls.Add(this.pnInput);

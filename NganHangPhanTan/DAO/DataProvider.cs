@@ -11,10 +11,10 @@ namespace NganHangPhanTan.DAO
     {
         private static DataProvider instance;
 
-        public readonly string DISTRIBUTOR_NAME = "DESKTOP-TU1HSJC";
+        public readonly string DISTRIBUTOR_NAME = "DESKTOP-AQV5G2G";
         private readonly string CONNECTION_STR_TEMPLATE = "Data Source={0};Initial Catalog=NGANHANG;{1}";
         private readonly string REMOTE_LOGIN = "HTKN";
-        private readonly string REMOTE_PASS = "123";
+        private readonly string REMOTE_PASS = "123456";
 
         // Giữ khi đăng nhập
         private BindingSource bsSubcribers = new BindingSource();
@@ -62,6 +62,8 @@ namespace NganHangPhanTan.DAO
         {
             serverName = subcriber;
             ConnectionStr = string.Format(CONNECTION_STR_TEMPLATE, serverName, $"User ID={loginName};password={pass}");
+
+            
         }
 
         public void SetServerToDistributor()
@@ -74,6 +76,8 @@ namespace NganHangPhanTan.DAO
         /// Test connection to server is running or not.
         /// </summary>
         /// <returns></returns>
+        /// 
+        
         public bool CheckConnection()
         {
             SqlConnection connection = null;

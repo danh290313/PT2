@@ -10,8 +10,8 @@ namespace NganHangPhanTan.DTO
 {
     public class User
     {
-        public readonly static string GROUP_NAME_NGANHANG = "NganHang";
-        public readonly static string GROUP_NAME_CHINHANH = "ChiNhanh";
+        public readonly static string GROUP_NAME_NGANHANG = "NGANHANG";
+        public readonly static string GROUP_NAME_CHINHANH = "CHINHANH";
 
         public enum GroupENM
         {

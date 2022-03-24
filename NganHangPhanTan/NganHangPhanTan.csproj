@@ -135,6 +135,7 @@
     <Compile Include="Report\ReportTransaction.Designer.cs">
       <DependentUpon>ReportTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="SimpleForm\fChangeEndpointsExchangeTrans.cs">
       <SubType>Form</SubType>
     </Compile>
