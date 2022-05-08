@@ -113,9 +113,9 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.groupControl1.Controls.Add(this.usp_GetCustomerHavingAccountInSubcriberGridControl);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(0, 74);
+            this.groupControl1.Location = new System.Drawing.Point(0, 54);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1147, 230);
+            this.groupControl1.Size = new System.Drawing.Size(1154, 230);
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Danh sách khách hàng đăng ký tài khoản thuộc chi nhánh";
             // 
@@ -123,10 +123,10 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.usp_GetCustomerHavingAccountInSubcriberGridControl.DataSource = this.bdsCustomer;
             this.usp_GetCustomerHavingAccountInSubcriberGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usp_GetCustomerHavingAccountInSubcriberGridControl.Location = new System.Drawing.Point(2, 28);
+            this.usp_GetCustomerHavingAccountInSubcriberGridControl.Location = new System.Drawing.Point(2, 34);
             this.usp_GetCustomerHavingAccountInSubcriberGridControl.MainView = this.gvCustomer;
             this.usp_GetCustomerHavingAccountInSubcriberGridControl.Name = "usp_GetCustomerHavingAccountInSubcriberGridControl";
-            this.usp_GetCustomerHavingAccountInSubcriberGridControl.Size = new System.Drawing.Size(1143, 200);
+            this.usp_GetCustomerHavingAccountInSubcriberGridControl.Size = new System.Drawing.Size(1150, 194);
             this.usp_GetCustomerHavingAccountInSubcriberGridControl.TabIndex = 0;
             this.usp_GetCustomerHavingAccountInSubcriberGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCustomer});
@@ -165,7 +165,7 @@ namespace NganHangPhanTan.SimpleForm
             this.colCMND.Name = "colCMND";
             this.colCMND.Visible = true;
             this.colCMND.VisibleIndex = 0;
-            this.colCMND.Width = 94;
+            this.colCMND.Width = 99;
             // 
             // colHOTEN
             // 
@@ -210,16 +210,16 @@ namespace NganHangPhanTan.SimpleForm
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1147, 74);
+            this.panelControl1.Size = new System.Drawing.Size(1154, 54);
             this.panelControl1.TabIndex = 11;
             // 
             // cbBrand
             // 
             this.cbBrand.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBrand.FormattingEnabled = true;
-            this.cbBrand.Location = new System.Drawing.Point(140, 24);
+            this.cbBrand.Location = new System.Drawing.Point(149, 9);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(391, 31);
+            this.cbBrand.Size = new System.Drawing.Size(391, 36);
             this.cbBrand.TabIndex = 1;
             this.cbBrand.SelectionChangeCommitted += new System.EventHandler(this.cbBrand_SelectionChangeCommitted);
             // 
@@ -227,9 +227,9 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 27);
+            this.label1.Location = new System.Drawing.Point(30, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 23);
+            this.label1.Size = new System.Drawing.Size(113, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi nhánh:";
             // 
@@ -238,18 +238,18 @@ namespace NganHangPhanTan.SimpleForm
             this.pnBody.Controls.Add(this.pnTrans);
             this.pnBody.Controls.Add(this.groupControl3);
             this.pnBody.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnBody.Location = new System.Drawing.Point(0, 304);
+            this.pnBody.Location = new System.Drawing.Point(0, 284);
             this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(1147, 229);
+            this.pnBody.Size = new System.Drawing.Size(1154, 229);
             this.pnBody.TabIndex = 16;
             // 
             // pnTrans
             // 
             this.pnTrans.Controls.Add(this.gcTrans);
             this.pnTrans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnTrans.Location = new System.Drawing.Point(673, 0);
+            this.pnTrans.Location = new System.Drawing.Point(540, 0);
             this.pnTrans.Name = "pnTrans";
-            this.pnTrans.Size = new System.Drawing.Size(474, 229);
+            this.pnTrans.Size = new System.Drawing.Size(614, 229);
             this.pnTrans.TabIndex = 14;
             this.pnTrans.Text = "Giao dịch chuyển tiền của tài khoản";
             // 
@@ -257,10 +257,10 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.gcTrans.DataSource = this.bdsTrans;
             this.gcTrans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcTrans.Location = new System.Drawing.Point(2, 28);
+            this.gcTrans.Location = new System.Drawing.Point(2, 34);
             this.gcTrans.MainView = this.gvTrans;
             this.gcTrans.Name = "gcTrans";
-            this.gcTrans.Size = new System.Drawing.Size(470, 199);
+            this.gcTrans.Size = new System.Drawing.Size(610, 193);
             this.gcTrans.TabIndex = 0;
             this.gcTrans.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTrans});
@@ -375,7 +375,7 @@ namespace NganHangPhanTan.SimpleForm
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(673, 229);
+            this.groupControl3.Size = new System.Drawing.Size(540, 229);
             this.groupControl3.TabIndex = 13;
             this.groupControl3.Text = "Danh sách tài khoản của khách hàng";
             // 
@@ -383,13 +383,14 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.usp_GetAccountByCustomerIdGridControl.DataSource = this.bdsAccount;
             this.usp_GetAccountByCustomerIdGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usp_GetAccountByCustomerIdGridControl.Location = new System.Drawing.Point(2, 28);
+            this.usp_GetAccountByCustomerIdGridControl.Location = new System.Drawing.Point(2, 34);
             this.usp_GetAccountByCustomerIdGridControl.MainView = this.gvAccount;
             this.usp_GetAccountByCustomerIdGridControl.Name = "usp_GetAccountByCustomerIdGridControl";
-            this.usp_GetAccountByCustomerIdGridControl.Size = new System.Drawing.Size(669, 199);
+            this.usp_GetAccountByCustomerIdGridControl.Size = new System.Drawing.Size(536, 193);
             this.usp_GetAccountByCustomerIdGridControl.TabIndex = 0;
             this.usp_GetAccountByCustomerIdGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvAccount});
+            this.usp_GetAccountByCustomerIdGridControl.Click += new System.EventHandler(this.usp_GetAccountByCustomerIdGridControl_Click);
             // 
             // bdsAccount
             // 
@@ -461,9 +462,9 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.gcEditEnpoint.Controls.Add(this.pnInput);
             this.gcEditEnpoint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcEditEnpoint.Location = new System.Drawing.Point(0, 533);
+            this.gcEditEnpoint.Location = new System.Drawing.Point(0, 513);
             this.gcEditEnpoint.Name = "gcEditEnpoint";
-            this.gcEditEnpoint.Size = new System.Drawing.Size(1147, 403);
+            this.gcEditEnpoint.Size = new System.Drawing.Size(1154, 260);
             this.gcEditEnpoint.TabIndex = 17;
             this.gcEditEnpoint.Text = "Danh sách tài khoản cần chuyển";
             // 
@@ -472,9 +473,9 @@ namespace NganHangPhanTan.SimpleForm
             this.pnInput.Controls.Add(this.gcEndpoints);
             this.pnInput.Controls.Add(this.panel2);
             this.pnInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnInput.Location = new System.Drawing.Point(2, 28);
+            this.pnInput.Location = new System.Drawing.Point(2, 34);
             this.pnInput.Name = "pnInput";
-            this.pnInput.Size = new System.Drawing.Size(1143, 373);
+            this.pnInput.Size = new System.Drawing.Size(1150, 224);
             this.pnInput.TabIndex = 19;
             // 
             // gcEndpoints
@@ -483,10 +484,11 @@ namespace NganHangPhanTan.SimpleForm
             this.gcEndpoints.Location = new System.Drawing.Point(0, 0);
             this.gcEndpoints.MainView = this.gvEndpoints;
             this.gcEndpoints.Name = "gcEndpoints";
-            this.gcEndpoints.Size = new System.Drawing.Size(830, 373);
+            this.gcEndpoints.Size = new System.Drawing.Size(766, 224);
             this.gcEndpoints.TabIndex = 5;
             this.gcEndpoints.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEndpoints});
+            this.gcEndpoints.Click += new System.EventHandler(this.gcEndpoints_Click);
             // 
             // gvEndpoints
             // 
@@ -505,9 +507,9 @@ namespace NganHangPhanTan.SimpleForm
             this.panel2.Controls.Add(this.btnReload);
             this.panel2.Controls.Add(this.pnExchangeInfo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(830, 0);
+            this.panel2.Location = new System.Drawing.Point(766, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(313, 373);
+            this.panel2.Size = new System.Drawing.Size(384, 224);
             this.panel2.TabIndex = 4;
             // 
             // btnReload
@@ -517,7 +519,7 @@ namespace NganHangPhanTan.SimpleForm
             this.btnReload.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftBottom;
-            this.btnReload.Location = new System.Drawing.Point(6, 176);
+            this.btnReload.Location = new System.Drawing.Point(38, 163);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(297, 36);
             this.btnReload.TabIndex = 12;
@@ -533,9 +535,9 @@ namespace NganHangPhanTan.SimpleForm
             this.pnExchangeInfo.Controls.Add(this.teInitBalance);
             this.pnExchangeInfo.Controls.Add(this.label3);
             this.pnExchangeInfo.Controls.Add(this.label2);
-            this.pnExchangeInfo.Location = new System.Drawing.Point(6, 12);
+            this.pnExchangeInfo.Location = new System.Drawing.Point(6, 3);
             this.pnExchangeInfo.Name = "pnExchangeInfo";
-            this.pnExchangeInfo.Size = new System.Drawing.Size(297, 158);
+            this.pnExchangeInfo.Size = new System.Drawing.Size(375, 154);
             this.pnExchangeInfo.TabIndex = 4;
             // 
             // btnCommit
@@ -545,7 +547,7 @@ namespace NganHangPhanTan.SimpleForm
             this.btnCommit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.btnCommit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.ImageOptions.Image")));
             this.btnCommit.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftBottom;
-            this.btnCommit.Location = new System.Drawing.Point(154, 105);
+            this.btnCommit.Location = new System.Drawing.Point(202, 104);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Size = new System.Drawing.Size(126, 36);
             this.btnCommit.TabIndex = 14;
@@ -559,7 +561,7 @@ namespace NganHangPhanTan.SimpleForm
             this.btnChangeEndpoints.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.btnChangeEndpoints.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeEndpoints.ImageOptions.Image")));
             this.btnChangeEndpoints.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftBottom;
-            this.btnChangeEndpoints.Location = new System.Drawing.Point(15, 105);
+            this.btnChangeEndpoints.Location = new System.Drawing.Point(16, 104);
             this.btnChangeEndpoints.Name = "btnChangeEndpoints";
             this.btnChangeEndpoints.Size = new System.Drawing.Size(126, 36);
             this.btnChangeEndpoints.TabIndex = 13;
@@ -568,7 +570,7 @@ namespace NganHangPhanTan.SimpleForm
             // 
             // teRemainBalance
             // 
-            this.teRemainBalance.Location = new System.Drawing.Point(106, 56);
+            this.teRemainBalance.Location = new System.Drawing.Point(154, 55);
             this.teRemainBalance.Name = "teRemainBalance";
             this.teRemainBalance.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teRemainBalance.Properties.Appearance.Options.UseFont = true;
@@ -580,12 +582,12 @@ namespace NganHangPhanTan.SimpleForm
             this.teRemainBalance.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.teRemainBalance.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.teRemainBalance.Properties.ReadOnly = true;
-            this.teRemainBalance.Size = new System.Drawing.Size(174, 30);
+            this.teRemainBalance.Size = new System.Drawing.Size(174, 36);
             this.teRemainBalance.TabIndex = 3;
             // 
             // teInitBalance
             // 
-            this.teInitBalance.Location = new System.Drawing.Point(106, 18);
+            this.teInitBalance.Location = new System.Drawing.Point(154, 8);
             this.teInitBalance.Name = "teInitBalance";
             this.teInitBalance.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teInitBalance.Properties.Appearance.Options.UseFont = true;
@@ -597,7 +599,7 @@ namespace NganHangPhanTan.SimpleForm
             this.teInitBalance.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.teInitBalance.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.teInitBalance.Properties.ReadOnly = true;
-            this.teInitBalance.Size = new System.Drawing.Size(174, 30);
+            this.teInitBalance.Size = new System.Drawing.Size(174, 36);
             this.teInitBalance.TabIndex = 2;
             // 
             // label3
@@ -606,7 +608,7 @@ namespace NganHangPhanTan.SimpleForm
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 23);
+            this.label3.Size = new System.Drawing.Size(109, 30);
             this.label3.TabIndex = 1;
             this.label3.Text = "Số dư sau:";
             // 
@@ -614,9 +616,9 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 23);
+            this.label2.Location = new System.Drawing.Point(11, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 23);
+            this.label2.Size = new System.Drawing.Size(112, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "Số dư đầu:";
             // 
@@ -646,9 +648,9 @@ namespace NganHangPhanTan.SimpleForm
             // fTransExchange
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 936);
+            this.ClientSize = new System.Drawing.Size(1154, 773);
             this.Controls.Add(this.gcEditEnpoint);
             this.Controls.Add(this.pnBody);
             this.Controls.Add(this.groupControl1);

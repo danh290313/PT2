@@ -185,6 +185,7 @@ namespace NganHangPhanTan
                     MdiParent = this,
                     ReqUpdateCanCloseState = UpdateCanCloseMDIFormStatus,
                     ReqClose = CloseMDIForm,
+            
                 };
                 f.Show();
                 mdiFormCanCloseState.Add(f, true);

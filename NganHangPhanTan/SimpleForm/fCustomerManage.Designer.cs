@@ -79,6 +79,8 @@ namespace NganHangPhanTan.SimpleForm
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.cbGender = new System.Windows.Forms.ComboBox();
+            this.bdsTaiKhoan = new System.Windows.Forms.BindingSource(this.components);
+            this.taTaiKhoan = new NganHangPhanTan.DSTableAdapters.TaiKhoanTableAdapter();
             cMNDLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             dIACHILabel = new System.Windows.Forms.Label();
@@ -97,6 +99,7 @@ namespace NganHangPhanTan.SimpleForm
             ((System.ComponentModel.ISupportInitialize)(this.deDateAccept.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDateAccept.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
             // cMNDLabel
@@ -184,7 +187,7 @@ namespace NganHangPhanTan.SimpleForm
             this.panelControl1.Location = new System.Drawing.Point(0, 34);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1512, 84);
+            this.panelControl1.Size = new System.Drawing.Size(1538, 84);
             this.panelControl1.TabIndex = 5;
             // 
             // cbBrand
@@ -242,7 +245,7 @@ namespace NganHangPhanTan.SimpleForm
             this.gcCustomer.MainView = this.gridView1;
             this.gcCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.gcCustomer.Name = "gcCustomer";
-            this.gcCustomer.Size = new System.Drawing.Size(1512, 409);
+            this.gcCustomer.Size = new System.Drawing.Size(1538, 409);
             this.gcCustomer.TabIndex = 10;
             this.gcCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -401,7 +404,7 @@ namespace NganHangPhanTan.SimpleForm
             this.pnInput.Location = new System.Drawing.Point(0, 527);
             this.pnInput.Margin = new System.Windows.Forms.Padding(4);
             this.pnInput.Name = "pnInput";
-            this.pnInput.Size = new System.Drawing.Size(1512, 512);
+            this.pnInput.Size = new System.Drawing.Size(1538, 512);
             this.pnInput.TabIndex = 15;
             // 
             // txbPhoneNum
@@ -613,7 +616,7 @@ namespace NganHangPhanTan.SimpleForm
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.barDockControlTop.Size = new System.Drawing.Size(1512, 34);
+            this.barDockControlTop.Size = new System.Drawing.Size(1538, 34);
             // 
             // barDockControlBottom
             // 
@@ -622,7 +625,7 @@ namespace NganHangPhanTan.SimpleForm
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 1039);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1512, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1538, 20);
             // 
             // barDockControlLeft
             // 
@@ -637,7 +640,7 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1512, 34);
+            this.barDockControlRight.Location = new System.Drawing.Point(1538, 34);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 1005);
@@ -657,12 +660,22 @@ namespace NganHangPhanTan.SimpleForm
             this.cbGender.Size = new System.Drawing.Size(154, 36);
             this.cbGender.TabIndex = 8;
             // 
+            // bdsTaiKhoan
+            // 
+            this.bdsTaiKhoan.DataMember = "FK_TaiKhoan_KhachHang";
+            this.bdsTaiKhoan.DataSource = this.bdsCustomer;
+            // 
+            // taTaiKhoan
+            // 
+            this.taTaiKhoan.ClearBeforeFill = true;
+            // 
             // fCustomerManage
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1512, 1059);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1538, 1059);
             this.Controls.Add(this.pnInput);
             this.Controls.Add(this.gcCustomer);
             this.Controls.Add(this.panelControl1);
@@ -690,6 +703,7 @@ namespace NganHangPhanTan.SimpleForm
             ((System.ComponentModel.ISupportInitialize)(this.deDateAccept.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDateAccept.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,5 +751,7 @@ namespace NganHangPhanTan.SimpleForm
         private System.Windows.Forms.TextBox txbFirstName;
         private System.Windows.Forms.TextBox txbLastName;
         private System.Windows.Forms.TextBox txbId;
+        private System.Windows.Forms.BindingSource bdsTaiKhoan;
+        private DSTableAdapters.TaiKhoanTableAdapter taTaiKhoan;
     }
 }

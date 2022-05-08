@@ -69,8 +69,9 @@ namespace NganHangPhanTan.Report
 
                 string accountId = ((DataRowView)bsGetCustomerAccounts[bsGetCustomerAccounts.Position])["SOTK"].ToString();
                 string transType = cbTransType.SelectedValue.ToString();
+
                 ReportTransaction report = new ReportTransaction(accountId, dpDateFrom.DateTime, dpDateTo.DateTime, transType,
-                    ControlUtil.GetTextInCombobox(cbTransType),  cbBrand.Text);
+                ControlUtil.GetTextInCombobox(cbTransType),  cbBrand.Text);
                 ReportPrintTool printTool = new ReportPrintTool(report);
                 printTool.ShowPreviewDialog();
             }
@@ -100,6 +101,11 @@ namespace NganHangPhanTan.Report
             // Tải dữ liệu từ site mới về
             taGetCustomerAccounts.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
             taGetCustomerAccounts.Fill(this.DS.usp_GetCustomerAccounts);
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

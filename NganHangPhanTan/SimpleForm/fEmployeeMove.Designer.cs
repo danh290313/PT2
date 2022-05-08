@@ -42,6 +42,8 @@ namespace NganHangPhanTan.SimpleForm
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txbId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBrandOption)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usp_GetOtherBrandFromSubcriberGridControl)).BeginInit();
@@ -90,11 +92,11 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.usp_GetOtherBrandFromSubcriberGridControl.DataSource = this.bdsBrandOption;
             this.usp_GetOtherBrandFromSubcriberGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usp_GetOtherBrandFromSubcriberGridControl.Location = new System.Drawing.Point(2, 28);
+            this.usp_GetOtherBrandFromSubcriberGridControl.Location = new System.Drawing.Point(2, 34);
             this.usp_GetOtherBrandFromSubcriberGridControl.MainView = this.gridView1;
             this.usp_GetOtherBrandFromSubcriberGridControl.Margin = new System.Windows.Forms.Padding(4);
             this.usp_GetOtherBrandFromSubcriberGridControl.Name = "usp_GetOtherBrandFromSubcriberGridControl";
-            this.usp_GetOtherBrandFromSubcriberGridControl.Size = new System.Drawing.Size(1217, 294);
+            this.usp_GetOtherBrandFromSubcriberGridControl.Size = new System.Drawing.Size(1217, 219);
             this.usp_GetOtherBrandFromSubcriberGridControl.TabIndex = 2;
             this.usp_GetOtherBrandFromSubcriberGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -161,6 +163,8 @@ namespace NganHangPhanTan.SimpleForm
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.label1);
+            this.groupControl2.Controls.Add(this.txbId);
             this.groupControl2.Controls.Add(this.btnMove);
             this.groupControl2.Controls.Add(this.usp_GetOtherBrandFromSubcriberGridControl);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -170,10 +174,28 @@ namespace NganHangPhanTan.SimpleForm
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "Chọn chi nhánh cần chuyển nhân viên:";
             // 
+            // txbId
+            // 
+            this.txbId.Location = new System.Drawing.Point(171, 280);
+            this.txbId.Multiline = true;
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(141, 26);
+            this.txbId.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 19);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Mã NV MỚI :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // fEmployeeMove
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 403);
             this.Controls.Add(this.groupControl2);
@@ -190,6 +212,7 @@ namespace NganHangPhanTan.SimpleForm
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +230,7 @@ namespace NganHangPhanTan.SimpleForm
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colSoDT;
         private DevExpress.XtraEditors.GroupControl groupControl2;
+        private System.Windows.Forms.TextBox txbId;
+        private System.Windows.Forms.Label label1;
     }
 }

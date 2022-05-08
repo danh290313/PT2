@@ -29,13 +29,7 @@ namespace NganHangPhanTan
             LoadSubcribers();
             txbLoginName.Focus();
         }
-
-        // XXX
-        public void abc()
-        {
-            btnLogin_Click(null, new EventArgs());
-        }
-
+       
         private void btnLogin_Click(object sender, System.EventArgs e)
         {
             string loginName = txbLoginName.Text.Trim();

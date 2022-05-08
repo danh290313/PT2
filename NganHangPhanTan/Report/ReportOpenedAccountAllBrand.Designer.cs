@@ -48,12 +48,12 @@ namespace NganHangPhanTan.Report
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.lbTitle = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbTransCount = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbDate = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbBrandName = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbTransCount = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -71,8 +71,8 @@ namespace NganHangPhanTan.Report
             this.tableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.groupHeaderBand1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.label2 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
@@ -81,10 +81,10 @@ namespace NganHangPhanTan.Report
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "desktop-tu1hsjc.NGANHANG.dbo";
+            this.sqlDataSource1.ConnectionName = "DESKTOP-AQV5G2G.NGANHANG.dbo";
             msSqlConnectionParameters1.AuthorizationType = DevExpress.DataAccess.ConnectionParameters.MsSqlAuthorizationType.Windows;
             msSqlConnectionParameters1.DatabaseName = "NGANHANG";
-            msSqlConnectionParameters1.ServerName = "DESKTOP-TU1HSJC";
+            msSqlConnectionParameters1.ServerName = "DESKTOP-AQV5G2G";
             this.sqlDataSource1.ConnectionParameters = msSqlConnectionParameters1;
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "usp_ReportOpenedAccount_Date";
@@ -162,6 +162,7 @@ namespace NganHangPhanTan.Report
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.pageInfo1,
             this.pageInfo2});
+            this.BottomMargin.HeightF = 181.0001F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // pageInfo1
@@ -206,34 +207,6 @@ namespace NganHangPhanTan.Report
             this.lbTitle.Text = "Danh Sách Tài Khoản Mở";
             this.lbTitle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // lbTransCount
-            // 
-            this.lbTransCount.AutoWidth = true;
-            this.lbTransCount.CanShrink = true;
-            this.lbTransCount.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([SOTK])")});
-            this.lbTransCount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbTransCount.LocationFloat = new DevExpress.Utils.PointFloat(638.3331F, 10F);
-            this.lbTransCount.Multiline = true;
-            this.lbTransCount.Name = "lbTransCount";
-            this.lbTransCount.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbTransCount.SizeF = new System.Drawing.SizeF(61.66669F, 22.99999F);
-            this.lbTransCount.StylePriority.UseFont = false;
-            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
-            this.lbTransCount.Summary = xrSummary1;
-            this.lbTransCount.Text = "xrLabel1";
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(509.0496F, 10F);
-            this.xrLabel3.Multiline = true;
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(129.2834F, 22.99999F);
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.Text = "Tổng số tài khoản:";
-            // 
             // lbDate
             // 
             this.lbDate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
@@ -277,6 +250,34 @@ namespace NganHangPhanTan.Report
             this.xrLabel1.SizeF = new System.Drawing.SizeF(83.33331F, 23F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.Text = "Chi nhánh:";
+            // 
+            // lbTransCount
+            // 
+            this.lbTransCount.AutoWidth = true;
+            this.lbTransCount.CanShrink = true;
+            this.lbTransCount.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([SOTK])")});
+            this.lbTransCount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbTransCount.LocationFloat = new DevExpress.Utils.PointFloat(638.3331F, 10F);
+            this.lbTransCount.Multiline = true;
+            this.lbTransCount.Name = "lbTransCount";
+            this.lbTransCount.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbTransCount.SizeF = new System.Drawing.SizeF(61.66669F, 22.99999F);
+            this.lbTransCount.StylePriority.UseFont = false;
+            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.lbTransCount.Summary = xrSummary1;
+            this.lbTransCount.Text = "xrLabel1";
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(509.0496F, 10F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(129.2834F, 22.99999F);
+            this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.Text = "Tổng số tài khoản:";
             // 
             // GroupHeader1
             // 
@@ -473,6 +474,26 @@ namespace NganHangPhanTan.Report
             this.groupHeaderBand1.Name = "groupHeaderBand1";
             this.groupHeaderBand1.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBandExceptFirstEntry;
             // 
+            // xrLabel4
+            // 
+            this.xrLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.xrLabel4.BorderColor = System.Drawing.Color.White;
+            this.xrLabel4.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TENCN]")});
+            this.xrLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(139.1667F, 0F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 2, 2, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(570.8332F, 25F);
+            this.xrLabel4.StylePriority.UseBackColor = false;
+            this.xrLabel4.StylePriority.UseBorderColor = false;
+            this.xrLabel4.StylePriority.UseBorders = false;
+            this.xrLabel4.StylePriority.UseForeColor = false;
+            this.xrLabel4.StylePriority.UsePadding = false;
+            this.xrLabel4.Text = "xrLabel4";
+            // 
             // xrLabel2
             // 
             this.xrLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -494,26 +515,6 @@ namespace NganHangPhanTan.Report
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "Tên chi nhánh:";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
-            // xrLabel4
-            // 
-            this.xrLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.xrLabel4.BorderColor = System.Drawing.Color.White;
-            this.xrLabel4.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TENCN]")});
-            this.xrLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(139.1667F, 0F);
-            this.xrLabel4.Multiline = true;
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 2, 2, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(570.8332F, 25F);
-            this.xrLabel4.StylePriority.UseBackColor = false;
-            this.xrLabel4.StylePriority.UseBorderColor = false;
-            this.xrLabel4.StylePriority.UseBorders = false;
-            this.xrLabel4.StylePriority.UseForeColor = false;
-            this.xrLabel4.StylePriority.UsePadding = false;
-            this.xrLabel4.Text = "xrLabel4";
             // 
             // GroupFooter1
             // 
@@ -549,7 +550,7 @@ namespace NganHangPhanTan.Report
             this.DataMember = "usp_ReportOpenedAccount_Date";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(70, 70, 100, 100);
+            this.Margins = new System.Drawing.Printing.Margins(70, 70, 100, 181);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.Title,
             this.DetailCaption1,

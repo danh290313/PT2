@@ -31,9 +31,17 @@ namespace NganHangPhanTan.SimpleForm
 
         private void fCustomerManage_Load(object sender, EventArgs e)
         {
+            
+
             // TODO: This line of code loads data into the 'dS.KhachHang' table. You can move, or remove it, as needed.
             this.taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
             this.taCustomer.Fill(this.DS.KhachHang);
+
+            // TODO: This line of code loads data into the 'DS.TaiKhoan' table. You can move, or remove it, as needed.
+            this.taTaiKhoan.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taTaiKhoan.Fill(this.DS.TaiKhoan);
+
+
 
             ControlUtil.ConfigComboboxBrand(cbBrand);
             cbBrand.SelectedIndex = SecurityContext.User.BrandIndex;
@@ -439,6 +447,7 @@ namespace NganHangPhanTan.SimpleForm
             cbGender.DataBindings[0].WriteValue();
             deDateAccept.DataBindings[0].WriteValue();
 
+
             try
             {
                 // Lưu thông tin trên binding source
@@ -561,7 +570,7 @@ namespace NganHangPhanTan.SimpleForm
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string customerId = ((DataRowView)bdsCustomer[bdsCustomer.Position])[Customer.ID_HEADER].ToString();
-            if (CustomerDAO.Instance.HavingAnyAccount(customerId))
+            if (bdsTaiKhoan.Count>0)
             {
                 MessageUtil.ShowErrorMsgDialog("Không thể xóa khách hàng đã có tài khoản. Vui lòng thực hiện xóa tài khoản trước.\n");
                 return;

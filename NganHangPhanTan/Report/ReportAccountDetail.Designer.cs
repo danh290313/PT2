@@ -83,10 +83,10 @@ namespace NganHangPhanTan.Report
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "desktop-tu1hsjc.NGANHANG.dbo";
+            this.sqlDataSource1.ConnectionName = "DESKTOP-AQV5G2G.NGANHANG.dbo";
             msSqlConnectionParameters1.AuthorizationType = DevExpress.DataAccess.ConnectionParameters.MsSqlAuthorizationType.Windows;
             msSqlConnectionParameters1.DatabaseName = "NGANHANG";
-            msSqlConnectionParameters1.ServerName = "DESKTOP-TU1HSJC";
+            msSqlConnectionParameters1.ServerName = "DESKTOP-AQV5G2G";
             this.sqlDataSource1.ConnectionParameters = msSqlConnectionParameters1;
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "usp_ReportAccountDetailByBrandId";

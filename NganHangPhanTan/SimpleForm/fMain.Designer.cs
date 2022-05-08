@@ -94,6 +94,7 @@ namespace NganHangPhanTan
             this.btnCreateLogin});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonControl1.MaximumSize = new System.Drawing.Size(0, 200);
             this.ribbonControl1.MaxItemId = 24;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -101,7 +102,7 @@ namespace NganHangPhanTan
             this.ribCategory,
             this.ribService,
             this.ribReport});
-            this.ribbonControl1.Size = new System.Drawing.Size(1178, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(1215, 200);
             // 
             // barButtonItem1
             // 
@@ -325,37 +326,37 @@ namespace NganHangPhanTan
             this.tssEmployeeID,
             this.tssEmployeeName,
             this.tssEmployeeGroup});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 668);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 967);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1178, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1215, 32);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // tssEmployeeID
             // 
             this.tssEmployeeID.Name = "tssEmployeeID";
-            this.tssEmployeeID.Size = new System.Drawing.Size(97, 20);
+            this.tssEmployeeID.Size = new System.Drawing.Size(118, 25);
             this.tssEmployeeID.Text = "Mã nhân viên";
             // 
             // tssEmployeeName
             // 
             this.tssEmployeeName.Name = "tssEmployeeName";
-            this.tssEmployeeName.Size = new System.Drawing.Size(54, 20);
+            this.tssEmployeeName.Size = new System.Drawing.Size(66, 25);
             this.tssEmployeeName.Text = "Họ tên";
             // 
             // tssEmployeeGroup
             // 
             this.tssEmployeeGroup.Name = "tssEmployeeGroup";
-            this.tssEmployeeGroup.Size = new System.Drawing.Size(52, 20);
+            this.tssEmployeeGroup.Size = new System.Drawing.Size(63, 25);
             this.tssEmployeeGroup.Text = "Vai trò";
             // 
             // fMain
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 694);
+            this.ClientSize = new System.Drawing.Size(1215, 999);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -1,6 +1,7 @@
 ﻿using NganHangPhanTan.DAO;
 using System;
 
+
 namespace NganHangPhanTan.Report
 {
     public partial class ReportTransaction : DevExpress.XtraReports.UI.XtraReport

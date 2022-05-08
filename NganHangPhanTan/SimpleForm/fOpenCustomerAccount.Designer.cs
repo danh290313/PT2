@@ -30,6 +30,9 @@ namespace NganHangPhanTan.SimpleForm
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fOpenCustomerAccount));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbBrand = new System.Windows.Forms.ComboBox();
@@ -103,7 +106,7 @@ namespace NganHangPhanTan.SimpleForm
             this.cbBrand.FormattingEnabled = true;
             this.cbBrand.Location = new System.Drawing.Point(140, 24);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(391, 31);
+            this.cbBrand.Size = new System.Drawing.Size(391, 36);
             this.cbBrand.TabIndex = 1;
             this.cbBrand.SelectionChangeCommitted += new System.EventHandler(this.cbBrand_SelectionChangeCommitted);
             // 
@@ -113,7 +116,7 @@ namespace NganHangPhanTan.SimpleForm
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 23);
+            this.label1.Size = new System.Drawing.Size(113, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi nhánh:";
             // 
@@ -145,10 +148,18 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.gcCustomer.DataSource = this.bdsCustomer;
             this.gcCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCustomer.Location = new System.Drawing.Point(2, 28);
+            gridLevelNode2.RelationName = "FK_GD_GOIRUT_TaiKhoan";
+            gridLevelNode3.RelationName = "FK_SOTKCHUYEN_TAIKHOAN";
+            gridLevelNode1.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2,
+            gridLevelNode3});
+            gridLevelNode1.RelationName = "FK_TaiKhoan_KhachHang";
+            this.gcCustomer.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gcCustomer.Location = new System.Drawing.Point(2, 34);
             this.gcCustomer.MainView = this.gvCustomer;
             this.gcCustomer.Name = "gcCustomer";
-            this.gcCustomer.Size = new System.Drawing.Size(1269, 373);
+            this.gcCustomer.Size = new System.Drawing.Size(1269, 367);
             this.gcCustomer.TabIndex = 7;
             this.gcCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCustomer});
@@ -183,7 +194,7 @@ namespace NganHangPhanTan.SimpleForm
             this.colCMND.OptionsColumn.ReadOnly = true;
             this.colCMND.Visible = true;
             this.colCMND.VisibleIndex = 0;
-            this.colCMND.Width = 94;
+            this.colCMND.Width = 99;
             // 
             // colHO
             // 
@@ -309,13 +320,13 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.gcAccount.DataSource = this.bdsAccount;
             this.gcAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcAccount.Location = new System.Drawing.Point(2, 63);
+            this.gcAccount.Location = new System.Drawing.Point(2, 69);
             this.gcAccount.MainView = this.gvAccount;
             this.gcAccount.Name = "gcAccount";
             this.gcAccount.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2});
-            this.gcAccount.Size = new System.Drawing.Size(1269, 389);
+            this.gcAccount.Size = new System.Drawing.Size(1269, 383);
             this.gcAccount.TabIndex = 10;
             this.gcAccount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvAccount});
@@ -423,7 +434,7 @@ namespace NganHangPhanTan.SimpleForm
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnInsertAcc);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(2, 28);
+            this.panel1.Location = new System.Drawing.Point(2, 34);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1269, 35);
             this.panel1.TabIndex = 10;
@@ -526,7 +537,7 @@ namespace NganHangPhanTan.SimpleForm
             // fOpenCustomerAccount
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1273, 931);
             this.Controls.Add(this.groupControl2);

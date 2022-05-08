@@ -74,7 +74,7 @@ namespace NganHangPhanTan.Report
             label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.Location = new System.Drawing.Point(20, 60);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(120, 23);
+            label2.Size = new System.Drawing.Size(147, 30);
             label2.TabIndex = 9;
             label2.Text = "Loại giao dịch:";
             // 
@@ -84,7 +84,7 @@ namespace NganHangPhanTan.Report
             label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.Location = new System.Drawing.Point(446, 57);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(85, 23);
+            label3.Size = new System.Drawing.Size(105, 30);
             label3.TabIndex = 12;
             label3.Text = "Thời gian:";
             // 
@@ -93,7 +93,7 @@ namespace NganHangPhanTan.Report
             label4.AutoSize = true;
             label4.Location = new System.Drawing.Point(700, 57);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(13, 17);
+            label4.Size = new System.Drawing.Size(15, 19);
             label4.TabIndex = 13;
             label4.Text = "-";
             // 
@@ -114,7 +114,7 @@ namespace NganHangPhanTan.Report
             this.cbBrand.FormattingEnabled = true;
             this.cbBrand.Location = new System.Drawing.Point(139, 25);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(391, 31);
+            this.cbBrand.Size = new System.Drawing.Size(391, 36);
             this.cbBrand.TabIndex = 1;
             this.cbBrand.SelectionChangeCommitted += new System.EventHandler(this.cbBrand_SelectionChangeCommitted);
             // 
@@ -124,7 +124,7 @@ namespace NganHangPhanTan.Report
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(34, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 23);
+            this.label1.Size = new System.Drawing.Size(113, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi nhánh:";
             // 
@@ -138,9 +138,9 @@ namespace NganHangPhanTan.Report
             "Rút tiền",
             "Gửi tiền",
             "Chuyển tiền"});
-            this.cbTransType.Location = new System.Drawing.Point(158, 57);
+            this.cbTransType.Location = new System.Drawing.Point(163, 51);
             this.cbTransType.Name = "cbTransType";
-            this.cbTransType.Size = new System.Drawing.Size(205, 31);
+            this.cbTransType.Size = new System.Drawing.Size(205, 36);
             this.cbTransType.TabIndex = 8;
             // 
             // dpDateFrom
@@ -154,7 +154,7 @@ namespace NganHangPhanTan.Report
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpDateFrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpDateFrom.Size = new System.Drawing.Size(125, 30);
+            this.dpDateFrom.Size = new System.Drawing.Size(125, 36);
             this.dpDateFrom.TabIndex = 14;
             // 
             // dpDateTo
@@ -168,7 +168,7 @@ namespace NganHangPhanTan.Report
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpDateTo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpDateTo.Size = new System.Drawing.Size(125, 30);
+            this.dpDateTo.Size = new System.Drawing.Size(125, 36);
             this.dpDateTo.TabIndex = 15;
             // 
             // btnSubmit
@@ -214,7 +214,7 @@ namespace NganHangPhanTan.Report
             this.usp_GetCustomerAccountsGridControl.Location = new System.Drawing.Point(0, 83);
             this.usp_GetCustomerAccountsGridControl.MainView = this.gvAccount;
             this.usp_GetCustomerAccountsGridControl.Name = "usp_GetCustomerAccountsGridControl";
-            this.usp_GetCustomerAccountsGridControl.Size = new System.Drawing.Size(1092, 551);
+            this.usp_GetCustomerAccountsGridControl.Size = new System.Drawing.Size(1092, 461);
             this.usp_GetCustomerAccountsGridControl.TabIndex = 17;
             this.usp_GetCustomerAccountsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvAccount});
@@ -302,16 +302,17 @@ namespace NganHangPhanTan.Report
             this.groupControl1.Controls.Add(label4);
             this.groupControl1.Controls.Add(this.dpDateFrom);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 634);
+            this.groupControl1.Location = new System.Drawing.Point(0, 544);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1092, 233);
+            this.groupControl1.Size = new System.Drawing.Size(1092, 323);
             this.groupControl1.TabIndex = 18;
             this.groupControl1.Text = "Nhập thông tin báo cáo";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // fReportTransaction
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 867);
             this.Controls.Add(this.groupControl1);

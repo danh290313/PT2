@@ -77,7 +77,8 @@
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
-    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DAO\UserEventData.cs" />
+    <Compile Include="Properties\UserDAO.cs" />
     <Compile Include="DS.cs">
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
@@ -198,7 +199,6 @@
     <Compile Include="SimpleForm\fTransSendWithdrawal.Designer.cs">
       <DependentUpon>fTransSendWithdrawal.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserEventData.cs" />
     <Compile Include="Util\MessageUtil.cs" />
     <Compile Include="Util\ControlUtil.cs" />
     <Compile Include="Util\SecurityContext.cs" />

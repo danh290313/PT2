@@ -71,7 +71,6 @@ namespace NganHangPhanTan.SimpleForm
             btnReload.Enabled = btnExit.Enabled = true;
             btnSave.Enabled = btnUndo.Enabled = btnRedo.Enabled = false;
             pnInput.Enabled = false;
-            txbId.Enabled = false;
 
             this.gridBrandID = BrandDAO.Instance.GetBrandIdOfSubcriber();
             cbBrand_SelectionChangeCommitted(null, null);
@@ -86,7 +85,9 @@ namespace NganHangPhanTan.SimpleForm
             pnInput.Enabled = true;
             txbBrandId.Text = this.gridBrandID;
             gcEmployee.Enabled = false;
+
             cbGender.SelectedIndex = 0;
+
             txbId.Enabled = true;
             txbId.Focus();
             btnEmployeeMove.Enabled = btnInsert.Enabled = btnUpdate.Enabled = btnDelete.Enabled = btnReload.Enabled = btnExit.Enabled = false;
@@ -364,6 +365,13 @@ namespace NganHangPhanTan.SimpleForm
                     return;
                 }
 
+
+               // string idEmployee = deletedEmployee.Id;
+
+              //  string query = "EXEC usp_DeleteLogin @MaNV";
+               // int res = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idEmployee});
+                
+
                 btnDelete.Enabled = bdsEmployee.Count != 0;
 
                 // Ignore to save grid pos
@@ -576,7 +584,7 @@ namespace NganHangPhanTan.SimpleForm
             Close();
         }
 
-        private void MoveEmployeeToBrand(string brandId)
+        private void MoveEmployeeToBrand(string brandId, string Id)
         {
             string employeeId = ((DataRowView)bdsEmployee[bdsEmployee.Position])[Employee.ID_HEADER].ToString();
 
@@ -589,8 +597,8 @@ namespace NganHangPhanTan.SimpleForm
 
             if (MessageUtil.ShowWarnConfirmDialog("Xác nhận chuyển nhân viên?") == DialogResult.OK)
             {
-                string query = "EXEC dbo.usp_MoveEmployeeToBrand @MANV, @MACN";
-                int rowNum = DataProvider.Instance.ExecuteNonQuery(query, new object[] { employeeId, brandId });
+                string query = "EXEC dbo.usp_MoveEmployeeToBrand @MANV, @MACN, @NEWMANV";
+                int rowNum = DataProvider.Instance.ExecuteNonQuery(query, new object[] { employeeId, brandId, Id });
                 if (rowNum > 0)
                 {
                     MessageUtil.ShowInfoMsgDialog("Chuyển nhân viên thành công");

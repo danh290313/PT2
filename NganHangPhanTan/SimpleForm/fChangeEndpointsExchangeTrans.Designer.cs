@@ -98,10 +98,10 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.usp_GetCustomerHavingAccountAllGridControl.DataSource = this.bdsCustomer;
             this.usp_GetCustomerHavingAccountAllGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usp_GetCustomerHavingAccountAllGridControl.Location = new System.Drawing.Point(2, 28);
+            this.usp_GetCustomerHavingAccountAllGridControl.Location = new System.Drawing.Point(2, 34);
             this.usp_GetCustomerHavingAccountAllGridControl.MainView = this.gridView1;
             this.usp_GetCustomerHavingAccountAllGridControl.Name = "usp_GetCustomerHavingAccountAllGridControl";
-            this.usp_GetCustomerHavingAccountAllGridControl.Size = new System.Drawing.Size(969, 190);
+            this.usp_GetCustomerHavingAccountAllGridControl.Size = new System.Drawing.Size(969, 184);
             this.usp_GetCustomerHavingAccountAllGridControl.TabIndex = 0;
             this.usp_GetCustomerHavingAccountAllGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -206,7 +206,7 @@ namespace NganHangPhanTan.SimpleForm
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(0, 220);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(973, 210);
+            this.groupControl2.Size = new System.Drawing.Size(973, 225);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Danh sách tài khoản thuộc khách hàng";
             // 
@@ -214,10 +214,10 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.gcAccount.DataSource = this.bdsAccount;
             this.gcAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcAccount.Location = new System.Drawing.Point(2, 28);
+            this.gcAccount.Location = new System.Drawing.Point(2, 34);
             this.gcAccount.MainView = this.gvAccount;
             this.gcAccount.Name = "gcAccount";
-            this.gcAccount.Size = new System.Drawing.Size(969, 136);
+            this.gcAccount.Size = new System.Drawing.Size(969, 145);
             this.gcAccount.TabIndex = 2;
             this.gcAccount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvAccount});
@@ -291,7 +291,7 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.panel2.Controls.Add(this.btnChoose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(2, 164);
+            this.panel2.Location = new System.Drawing.Point(2, 179);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(969, 44);
             this.panel2.TabIndex = 1;
@@ -311,19 +311,19 @@ namespace NganHangPhanTan.SimpleForm
             this.groupControl3.Controls.Add(this.gcEndpoints);
             this.groupControl3.Controls.Add(this.panel1);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(0, 430);
+            this.groupControl3.Location = new System.Drawing.Point(0, 445);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(973, 267);
+            this.groupControl3.Size = new System.Drawing.Size(973, 252);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "Danh sách tài khoản cần chuyển";
             // 
             // gcEndpoints
             // 
             this.gcEndpoints.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcEndpoints.Location = new System.Drawing.Point(2, 28);
+            this.gcEndpoints.Location = new System.Drawing.Point(2, 34);
             this.gcEndpoints.MainView = this.gvEndpoints;
             this.gcEndpoints.Name = "gcEndpoints";
-            this.gcEndpoints.Size = new System.Drawing.Size(969, 168);
+            this.gcEndpoints.Size = new System.Drawing.Size(969, 155);
             this.gcEndpoints.TabIndex = 6;
             this.gcEndpoints.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEndpoints});
@@ -350,16 +350,16 @@ namespace NganHangPhanTan.SimpleForm
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(2, 196);
+            this.panel1.Location = new System.Drawing.Point(2, 189);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(969, 69);
+            this.panel1.Size = new System.Drawing.Size(969, 61);
             this.panel1.TabIndex = 0;
             // 
-            // btnReset
+            // btnDeleteAll
             // 
-            this.btnDeleteAll.Location = new System.Drawing.Point(568, 21);
-            this.btnDeleteAll.Name = "btnReset";
-            this.btnDeleteAll.Size = new System.Drawing.Size(114, 31);
+            this.btnDeleteAll.Location = new System.Drawing.Point(568, 15);
+            this.btnDeleteAll.Name = "btnDeleteAll";
+            this.btnDeleteAll.Size = new System.Drawing.Size(114, 38);
             this.btnDeleteAll.TabIndex = 6;
             this.btnDeleteAll.Text = "Xóa tất cả";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
@@ -367,9 +367,9 @@ namespace NganHangPhanTan.SimpleForm
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(688, 21);
+            this.btnReload.Location = new System.Drawing.Point(688, 15);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(115, 31);
+            this.btnReload.Size = new System.Drawing.Size(115, 38);
             this.btnReload.TabIndex = 4;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -377,7 +377,7 @@ namespace NganHangPhanTan.SimpleForm
             // 
             // teRemainBalance
             // 
-            this.teRemainBalance.Location = new System.Drawing.Point(139, 22);
+            this.teRemainBalance.Location = new System.Drawing.Point(154, 11);
             this.teRemainBalance.Name = "teRemainBalance";
             this.teRemainBalance.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teRemainBalance.Properties.Appearance.Options.UseFont = true;
@@ -386,23 +386,23 @@ namespace NganHangPhanTan.SimpleForm
             this.teRemainBalance.Properties.EditFormat.FormatString = "{0:c0}";
             this.teRemainBalance.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.teRemainBalance.Properties.ReadOnly = true;
-            this.teRemainBalance.Size = new System.Drawing.Size(173, 30);
+            this.teRemainBalance.Size = new System.Drawing.Size(173, 36);
             this.teRemainBalance.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 25);
+            this.label1.Location = new System.Drawing.Point(10, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 23);
+            this.label1.Size = new System.Drawing.Size(138, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "Số dư còn lại:";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(476, 21);
+            this.btnDelete.Location = new System.Drawing.Point(476, 15);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(86, 31);
+            this.btnDelete.Size = new System.Drawing.Size(86, 38);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -410,9 +410,9 @@ namespace NganHangPhanTan.SimpleForm
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(809, 21);
+            this.btnSave.Location = new System.Drawing.Point(809, 15);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 31);
+            this.btnSave.Size = new System.Drawing.Size(150, 38);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -440,7 +440,7 @@ namespace NganHangPhanTan.SimpleForm
             // fChangeEndpointsExchangeTrans
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 697);
             this.Controls.Add(this.groupControl3);

@@ -415,5 +415,15 @@ namespace NganHangPhanTan.SimpleForm
             }
             reloadData = false;
         }
+
+        private void gcEndpoints_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usp_GetAccountByCustomerIdGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
