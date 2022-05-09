@@ -34,11 +34,15 @@ namespace NganHangPhanTan.SimpleForm
 
         private void fOpenCustomerAccount_Load(object sender, System.EventArgs e)
         {
+            // TODO: This line of code loads data into the 'DS.usp_GetCustomerAll' table. You can move, or remove it, as needed.
+            this.usp_GetCustomerAllTableAdapter.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.usp_GetCustomerAllTableAdapter.Fill(this.DS.usp_GetCustomerAll);
+            // TODO: This line of code loads data into the 'DS.usp_GetCustomerAll' table. You can move, or remove it, as needed.
+        
             // TODO: This line of code loads data into the 'dS.KhachHang' table. You can move, or remove it, as needed.
-            this.taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
-            this.taCustomer.Fill(this.DS.KhachHang);
+            //this.taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            //this.taCustomer.Fill(this.DS.KhachHang);
             // TODO: This line of code loads data into the 'DS.TaiKhoan' table. You can move, or remove it, as needed.
-            this.taAccount.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
 
             ControlUtil.ConfigComboboxBrand(cbBrand);
             cbBrand.SelectedIndex = SecurityContext.User.BrandIndex;
@@ -81,7 +85,7 @@ namespace NganHangPhanTan.SimpleForm
 
             if (bdsCustomer.Count > 0)
             {
-                string customerId = ((DataRowView)bdsCustomer[bdsCustomer.Position])[Customer.ID_HEADER].ToString();
+                string customerId = ((DataRowView)bds_usp_GetCustomerAll[bds_usp_GetCustomerAll.Position])[Customer.ID_HEADER].ToString();
                 try
                 {
                     // Fill makes gvAccount fires focus row change to the first row
@@ -106,7 +110,8 @@ namespace NganHangPhanTan.SimpleForm
             gvAccount.Columns[Account.BALANCE_HEADER].OptionsColumn.ReadOnly = true;
         }
 
-        private void gvCustomer_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+
+        private void gvCustomerAll_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (acceptGvFocusedRowChanging == false)
                 return;
@@ -128,7 +133,7 @@ namespace NganHangPhanTan.SimpleForm
                 if (e.PrevFocusedRowHandle >= 0)
                 {
                     acceptGvFocusedRowChanging = false;
-                    gvCustomer.FocusedRowHandle = e.PrevFocusedRowHandle;
+                    gvCustomerAll.FocusedRowHandle = e.PrevFocusedRowHandle;
                     acceptGvFocusedRowChanging = true;
                 }
             }
@@ -251,7 +256,7 @@ namespace NganHangPhanTan.SimpleForm
         /// </summary>
         private void SaveAccountData()
         {
-            string customerId = ((DataRowView)bdsCustomer[bdsCustomer.Position])[Customer.ID_HEADER].ToString();
+            string customerId = ((DataRowView)bds_usp_GetCustomerAll[bds_usp_GetCustomerAll.Position])[Customer.ID_HEADER].ToString();
             foreach (DataRowView row in bdsAccount)
             {
                 bufferAccountDataTable.Rows.Add(
@@ -736,5 +741,6 @@ namespace NganHangPhanTan.SimpleForm
             gvAccount.Columns[Account.BALANCE_HEADER].OptionsColumn.ReadOnly = accountIdExisted;
         }
 
+        
     }
 }

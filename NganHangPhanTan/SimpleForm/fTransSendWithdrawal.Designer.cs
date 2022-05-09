@@ -86,6 +86,7 @@ namespace NganHangPhanTan.SimpleForm
             this.taCustomer = new NganHangPhanTan.DSTableAdapters.usp_GetCustomerHavingAccountInSubcriberTableAdapter();
             this.taAccount = new NganHangPhanTan.DSTableAdapters.usp_GetAccountByCustomerIdTableAdapter();
             this.taTrans = new NganHangPhanTan.DSTableAdapters.usp_GetTransSendWithdrawalByAccountIdTableAdapter();
+            this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
             mANVLabel = new System.Windows.Forms.Label();
             sOTIENLabel = new System.Windows.Forms.Label();
             sOTKLabel = new System.Windows.Forms.Label();
@@ -246,7 +247,8 @@ namespace NganHangPhanTan.SimpleForm
             this.colHOTEN,
             this.colDIACHI,
             this.colNGAYCAP,
-            this.colSODT});
+            this.colSODT,
+            this.colMACN});
             this.gvCustomer.GridControl = this.gcCustomer;
             this.gvCustomer.Name = "gvCustomer";
             this.gvCustomer.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCustomer_FocusedRowChanged);
@@ -752,6 +754,16 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.taTrans.ClearBeforeFill = true;
             // 
+            // colMACN
+            // 
+            this.colMACN.Caption = "Mã CN";
+            this.colMACN.FieldName = "MACN";
+            this.colMACN.MinWidth = 30;
+            this.colMACN.Name = "colMACN";
+            this.colMACN.Visible = true;
+            this.colMACN.VisibleIndex = 5;
+            this.colMACN.Width = 112;
+            // 
             // fTransSendWithdrawal
             // 
             this.Appearance.Options.UseFont = true;
@@ -857,5 +869,6 @@ namespace NganHangPhanTan.SimpleForm
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYGD;
         private DevExpress.XtraEditors.TextEdit teTransType;
         private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraGrid.Columns.GridColumn colMACN;
     }
 }
