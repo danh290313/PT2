@@ -61,7 +61,7 @@ namespace NganHangPhanTan.Report
                     MessageUtil.ShowErrorMsgDialog("Không thể xem báo cáo vì danh sách tài khoản rỗng");
                     return;
                 }
-                if (dpDateFrom.DateTime > dpDateTo.DateTime)
+                if (dpDateFrom.DateTime >= dpDateTo.DateTime)
                 {
                     MessageUtil.ShowErrorMsgDialog("Chọn ngày không hợp lệ");
                     return;

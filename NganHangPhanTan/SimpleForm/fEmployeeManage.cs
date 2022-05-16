@@ -29,12 +29,6 @@ namespace NganHangPhanTan.SimpleForm
             InitializeComponent();
         }
 
-        private void nhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsEmployee.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.DS);
-        }
 
         private void fEmployeeManage_Load(object sender, EventArgs e)
         {

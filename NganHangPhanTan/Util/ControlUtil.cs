@@ -15,12 +15,6 @@ namespace NganHangPhanTan.Util
         public readonly static string BRAND_DISPLAY_NAME = "TENCN";
         public readonly static string BRAND_VALUE_NAME = "TENSERVER";
 
-        public static void SetEnableOfAllButtons(Form frm, Boolean Active)
-        {
-            foreach (Control ctl in frm.Controls)
-                if ((ctl) is Button)
-                    ctl.Enabled = Active;
-        }
 
         public static Form CheckFormExists(Form parent, Type ftype)
         {
@@ -71,22 +65,11 @@ namespace NganHangPhanTan.Util
                 stack.RemoveFirst();
         }
 
-        public static void Debug(params object[] obs)
-        {
-            string msg = "";
-            foreach (var o in obs)
-                msg += (o != null ? o.ToString() : "null") + "\n";
-            MessageBox.Show(msg, "DEBUG");
-        }
 
         public static string GetTextInCombobox(ComboBox cmb)
         {
             return cmb.GetItemText(cmb.SelectedItem);
         }
 
-        private ControlUtil() 
-        {
-            throw new Exception();
-        }
     }
 }

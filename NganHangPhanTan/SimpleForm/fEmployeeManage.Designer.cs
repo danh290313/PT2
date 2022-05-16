@@ -159,7 +159,7 @@ namespace NganHangPhanTan.SimpleForm
             // 
             mACNLabel.AutoSize = true;
             mACNLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mACNLabel.Location = new System.Drawing.Point(16, 216);
+            mACNLabel.Location = new System.Drawing.Point(9, 216);
             mACNLabel.Name = "mACNLabel";
             mACNLabel.Size = new System.Drawing.Size(113, 30);
             mACNLabel.TabIndex = 11;
@@ -585,7 +585,7 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.txbFirstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsEmployee, "TEN", true));
             this.txbFirstName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbFirstName.Location = new System.Drawing.Point(803, 39);
+            this.txbFirstName.Location = new System.Drawing.Point(825, 39);
             this.txbFirstName.Name = "txbFirstName";
             this.txbFirstName.Size = new System.Drawing.Size(155, 35);
             this.txbFirstName.TabIndex = 5;
@@ -594,7 +594,7 @@ namespace NganHangPhanTan.SimpleForm
             // 
             this.txbLastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsEmployee, "HO", true));
             this.txbLastName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLastName.Location = new System.Drawing.Point(484, 39);
+            this.txbLastName.Location = new System.Drawing.Point(494, 39);
             this.txbLastName.Name = "txbLastName";
             this.txbLastName.Size = new System.Drawing.Size(313, 35);
             this.txbLastName.TabIndex = 3;

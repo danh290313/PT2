@@ -75,7 +75,7 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BrandDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
-    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="Util\DataProvider.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\UserEventData.cs" />
     <Compile Include="Properties\UserDAO.cs" />
@@ -137,10 +137,10 @@
       <DependentUpon>ReportTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="SimpleForm\fChangeEndpointsExchangeTrans.cs">
+    <Compile Include="SubForm\fChangeEndpointsExchangeTrans.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SimpleForm\fChangeEndpointsExchangeTrans.Designer.cs">
+    <Compile Include="SubForm\fChangeEndpointsExchangeTrans.Designer.cs">
       <DependentUpon>fChangeEndpointsExchangeTrans.cs</DependentUpon>
     </Compile>
     <Compile Include="SimpleForm\fCreateLogin.cs">
@@ -161,10 +161,10 @@
     <Compile Include="SimpleForm\fEmployeeManage.Designer.cs">
       <DependentUpon>fEmployeeManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="SimpleForm\fEmployeeMove.cs">
+    <Compile Include="SubForm\fEmployeeMove.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SimpleForm\fEmployeeMove.Designer.cs">
+    <Compile Include="SubForm\fEmployeeMove.Designer.cs">
       <DependentUpon>fEmployeeMove.cs</DependentUpon>
     </Compile>
     <Compile Include="SimpleForm\fMain.cs">
@@ -181,10 +181,10 @@
     <Compile Include="SimpleForm\fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="SimpleForm\fOpenCustomerAccount.cs">
+    <Compile Include="SubForm\fOpenCustomerAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SimpleForm\fOpenCustomerAccount.Designer.cs">
+    <Compile Include="SubForm\fOpenCustomerAccount.Designer.cs">
       <DependentUpon>fOpenCustomerAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="SimpleForm\fTransExchange.cs">
@@ -223,7 +223,7 @@
     <EmbeddedResource Include="Report\ReportTransaction.resx">
       <DependentUpon>ReportTransaction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimpleForm\fChangeEndpointsExchangeTrans.resx">
+    <EmbeddedResource Include="SubForm\fChangeEndpointsExchangeTrans.resx">
       <DependentUpon>fChangeEndpointsExchangeTrans.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\fCreateLogin.resx">
@@ -235,7 +235,7 @@
     <EmbeddedResource Include="SimpleForm\fEmployeeManage.resx">
       <DependentUpon>fEmployeeManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimpleForm\fEmployeeMove.resx">
+    <EmbeddedResource Include="SubForm\fEmployeeMove.resx">
       <DependentUpon>fEmployeeMove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\fMain.resx">
@@ -255,7 +255,7 @@
     <EmbeddedResource Include="SimpleForm\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimpleForm\fOpenCustomerAccount.resx">
+    <EmbeddedResource Include="SubForm\fOpenCustomerAccount.resx">
       <DependentUpon>fOpenCustomerAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\fTransExchange.resx">
