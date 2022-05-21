@@ -24,7 +24,7 @@
         public string GetBrandIdOfSubcriber()
         {
             string query = "SELECT dbo.udf_GetBrandIDOfSubcriber()";
-            return (string)DataProvider.Instance.ExecuteScalar(query);
+            return (string)Program.ExecuteScalar(query);
         }
     }
 }

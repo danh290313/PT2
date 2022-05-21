@@ -36,7 +36,7 @@ namespace NganHangPhanTan.SimpleForm
         private void fCreateLogin_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS.usp_GetEmployeeNotHavingAccountOfSubcriber' table. You can move, or remove it, as needed.
-            this.taEmployee.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taEmployee.Connection.ConnectionString = Program.ConnectionStr;
             Reload();
 
             string roleContent = "";
@@ -76,7 +76,7 @@ namespace NganHangPhanTan.SimpleForm
             string employeeId = (((DataRowView)bdsEmployee[bdsEmployee.Position])[Employee.ID_HEADER]).ToString();
 
             string query = "EXEC dbo.usp_CreateNewLogin @LoginName, @MaNV, @Pass, @Role";
-            int res = DataProvider.Instance.ExecuteNonQuery(query, new object[] {loginName, employeeId, pass, SecurityContext.User.GetGroupName()});
+            int res = Program.ExecuteNonQuery(query, new object[] {loginName, employeeId, pass, SecurityContext.User.GetGroupName()});
             if (res == -1)
             {
                 MessageUtil.ShowInfoMsgDialog("Tạo tài khoản hệ thống thành công");

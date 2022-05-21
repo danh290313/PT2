@@ -29,7 +29,7 @@ namespace NganHangPhanTan.DAO
         /// <returns></returns>
         public bool ExistById(string accountId)
         {
-            return (bool)DataProvider.Instance.ExecuteScalar($"SELECT dbo.udf_CheckAccountIdExisted('{accountId}')");
+            return (bool)Program.ExecuteScalar($"SELECT dbo.udf_CheckAccountIdExisted('{accountId}')");
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace NganHangPhanTan.DAO
         /// <returns></returns>
         public bool HavingAnyTransaction(string accountId)
         {
-            return (bool)DataProvider.Instance.ExecuteScalar($"SELECT dbo.udf_CheckAccountHavingTransaction('{accountId}')");
+            return (bool)Program.ExecuteScalar($"SELECT dbo.udf_CheckAccountHavingTransaction('{accountId}')");
             
         }
 
@@ -55,7 +55,7 @@ namespace NganHangPhanTan.DAO
             string employeeId = SecurityContext.User.Username;
             DateTime transDate = DateTime.Now;
 
-            int rowAffected = DataProvider.Instance.ExecuteNonQuery(
+            int rowAffected = Program.ExecuteNonQuery(
                 "EXEC usp_InsertTransSendWithdrawal @SOTK, @LOAIGD, @NGAYGD, @SOTIEN, @MANV",
                     new object[] { accountId, transTypeCode, transDate, amount, employeeId }
             );
@@ -78,7 +78,7 @@ namespace NganHangPhanTan.DAO
             param2.TypeName = "dbo.TBTYPE_MultiExchangeTransaction";
             SqlParameter param3 = new SqlParameter("@MANV", employeeId);
 
-            int rowAffected = DataProvider.Instance.ExecuteNonQuery(
+            int rowAffected = Program.ExecuteNonQuery(
                 "dbo.usp_InsertTransExchange",
                 new SqlParameter[] { param0, param1, param2, param3 }
             );

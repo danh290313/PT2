@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace NganHangPhanTan.Util
 {
-    public class ControlUtil
+    public static class ControlUtil
     {
         public readonly static int MAX_RECORD_STACK = 50;
 
@@ -26,21 +26,7 @@ namespace NganHangPhanTan.Util
             return null;
         }
 
-        public static void ConfigComboboxBrand(ComboBox cb)
-        {
-            cb.DisplayMember = BRAND_DISPLAY_NAME;
-            cb.ValueMember = BRAND_VALUE_NAME;
-            cb.DataSource = DataProvider.Instance.GetBSSubcribers();
-            cb.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        public static void ConfigComboboxGender(ComboBox cb)
-        {
-            cb.Items.AddRange(new object[] {"Nam", "Nữ"});
-            cb.SelectedIndex = 0;
-            cb.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
+     
         public static string RemoveDuplicateSpace(string str)
         {
             return Regex.Replace(str, @"\s+", " ");

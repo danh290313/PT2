@@ -13,7 +13,7 @@ namespace NganHangPhanTan.Report
         public ReportOpenedAccountAllBrand(DateTime dateFrom, DateTime dateTo)
         {
             InitializeComponent();
-            this.sqlDataSource1.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.sqlDataSource1.Connection.ConnectionString = Program.ConnectionStr;
             var query = this.sqlDataSource1.Queries[0];
             query.Parameters[0].Value = dateFrom.Date.ToString("yyyy-MM-dd");
             query.Parameters[1].Value = dateTo.Date.ToString("yyyy-MM-dd");

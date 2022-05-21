@@ -59,6 +59,7 @@ namespace NganHangPhanTan
             // 
             // cbBrand
             // 
+            this.cbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBrand.FormattingEnabled = true;
             this.cbBrand.Location = new System.Drawing.Point(197, 34);
             this.cbBrand.Margin = new System.Windows.Forms.Padding(4);

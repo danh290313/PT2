@@ -34,16 +34,19 @@ namespace NganHangPhanTan.SimpleForm
             
 
             // TODO: This line of code loads data into the 'dS.KhachHang' table. You can move, or remove it, as needed.
-            this.taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
             this.taCustomer.Fill(this.DS.KhachHang);
 
             // TODO: This line of code loads data into the 'DS.TaiKhoan' table. You can move, or remove it, as needed.
-            this.taTaiKhoan.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taTaiKhoan.Connection.ConnectionString = Program.ConnectionStr;
             this.taTaiKhoan.Fill(this.DS.TaiKhoan);
 
 
 
-            ControlUtil.ConfigComboboxBrand(cbBrand);
+            cbBrand.DataSource = Program.bindingSource;
+            cbBrand.DisplayMember = "TENCN";
+            cbBrand.ValueMember = "TENSERVER";
+
             cbBrand.SelectedIndex = SecurityContext.User.BrandIndex;
 
             switch (SecurityContext.User.Group)
@@ -66,7 +69,7 @@ namespace NganHangPhanTan.SimpleForm
             txbId.Enabled = false;
 
             this.gridBrandID = BrandDAO.Instance.GetBrandIdOfSubcriber();
-            cbBrand_SelectionChangeCommitted(null, null);
+            
         }
         
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -627,18 +630,44 @@ namespace NganHangPhanTan.SimpleForm
             string serverName = cbBrand.SelectedValue.ToString();
             User user = SecurityContext.User;
             if (cbBrand.SelectedIndex != user.BrandIndex)
-                DataProvider.Instance.SetServerToRemote(serverName);
+                Program.SetServerToRemote(serverName);
             else
-                DataProvider.Instance.SetServerToSubcriber(serverName, user.Login, user.Pass);
-            if (!DataProvider.Instance.CheckConnection())
+                Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
+            if (!Program.CheckConnection())
             {
                 MessageUtil.ShowErrorMsgDialog("Lỗi kết nối sang chi nhánh mới");
                 return;
             }
             // Tải dữ liệu từ site mới về
-            taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            taCustomer.Connection.ConnectionString = Program.ConnectionStr;
             taCustomer.Fill(this.DS.KhachHang);
         }
 
+        private void cbBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbBrand.SelectedValue.ToString().Equals("System.Data.RowView"))
+                return;
+
+            string serverName = cbBrand.SelectedValue.ToString();
+            User user = SecurityContext.User;
+            if (cbBrand.SelectedIndex != user.BrandIndex)
+                Program.SetServerToRemote(serverName);
+            else
+                Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
+            if (Program.CheckConnection() == false)
+            {
+                MessageUtil.ShowErrorMsgDialog("Lỗi kết nối sang chi nhánh mới.");
+                return;
+            }
+            else
+            {
+                this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
+                this.taCustomer.Fill(this.DS.KhachHang);
+
+                // TODO: This line of code loads data into the 'DS.TaiKhoan' table. You can move, or remove it, as needed.
+                this.taTaiKhoan.Connection.ConnectionString = Program.ConnectionStr;
+                this.taTaiKhoan.Fill(this.DS.TaiKhoan);
+            }
+        }
     }
 }

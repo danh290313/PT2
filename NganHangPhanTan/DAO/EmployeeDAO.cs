@@ -24,7 +24,7 @@
         /// <returns></returns>
         public bool IsEmployeeIDExisted(string employeeID)
         {
-            return (bool) DataProvider.Instance.ExecuteScalar($"SELECT dbo.udf_CheckEmployeeIDExisted(N'{employeeID}')");
+            return (bool) Program.ExecuteScalar($"SELECT dbo.udf_CheckEmployeeIDExisted(N'{employeeID}')");
         }
     }
 }

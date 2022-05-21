@@ -2,31 +2,35 @@
 using NganHangPhanTan.DTO;
 using NganHangPhanTan.Util;
 using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace NganHangPhanTan
 {
     public partial class fLogin : DevExpress.XtraEditors.XtraForm
     {
         private Action changeUserInfo;
-        private Action requestExitProgram;
 
         public Action ChangeUserInfo { get => changeUserInfo; set => changeUserInfo = value; }
-        public Action RequestExitProgram { get => requestExitProgram; set => requestExitProgram = value; }
+
+        private SqlConnection connPublisher = new SqlConnection();
 
         public fLogin()
         {
             InitializeComponent();
         }
 
-        private void LoadSubcribers()
-        {
-            ControlUtil.ConfigComboboxBrand(cbBrand);
-        }
+       
 
         private void fLogin_Load(object sender, System.EventArgs e)
         {
             // Load danh sách phân mãnh vào combobox
-            LoadSubcribers();
+
+            if (KetNoiDatabaseGoc() == 0)
+                return;
+
+            layDanhSachPhanManh("SELECT * FROM dbo.uv_GetSubcribers");
             txbLoginName.Focus();
         }
        
@@ -45,9 +49,12 @@ namespace NganHangPhanTan
                 MessageUtil.ShowErrorMsgDialog("Mật khẩu không được trống");
                 return;
             }
-
+           
             string serverName = cbBrand.SelectedValue.ToString();
-            DataProvider.Instance.SetServerToSubcriber(serverName, loginName, pass);
+            Program.SetServerToSubcriber(serverName, loginName, pass);
+
+            if (Program.CheckConnection() == false)
+                return;
 
             User user = UserDAO.Instance.Login(loginName);
             if (user != null)
@@ -58,12 +65,57 @@ namespace NganHangPhanTan
                 SecurityContext.User = user;
                 ChangeUserInfo.Invoke();
                 Close();
+
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            requestExitProgram.Invoke();
+            Close();
         }
+
+        
+
+        private int KetNoiDatabaseGoc()
+        {
+            if (connPublisher != null && connPublisher.State == ConnectionState.Open)
+                connPublisher.Close();
+            try
+            {
+                connPublisher.ConnectionString = Program.connstrPublisher;
+                connPublisher.Open();
+                return 1;
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                return 0;
+            }
+        }
+
+        private void layDanhSachPhanManh(String cmd)
+        {
+            if (connPublisher.State == ConnectionState.Closed)
+            {
+                connPublisher.Open();
+            }
+            DataTable dt = new DataTable();
+            // adapter dùng để đưa dữ liệu từ view sang database
+            SqlDataAdapter da = new SqlDataAdapter(cmd, connPublisher);
+            // dùng adapter thì mới đổ vào data table được
+            da.Fill(dt);
+
+
+            connPublisher.Close();
+            Program.bindingSource.DataSource = dt;
+
+
+            cbBrand.DataSource = Program.bindingSource;
+            cbBrand.DisplayMember = "TENCN";
+            cbBrand.ValueMember = "TENSERVER";
+        }
+
+
     }
 }

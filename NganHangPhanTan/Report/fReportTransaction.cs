@@ -27,11 +27,13 @@ namespace NganHangPhanTan.Report
         private void fReportTransaction_Load(object sender, System.EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS.usp_GetCustomerAccounts' table. You can move, or remove it, as needed.
-            this.taGetCustomerAccounts.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taGetCustomerAccounts.Connection.ConnectionString = Program.ConnectionStr;
             this.taGetCustomerAccounts.Fill(this.DS.usp_GetCustomerAccounts);
 
-            ControlUtil.ConfigComboboxBrand(cbBrand);
-            cbBrand.SelectedIndex = SecurityContext.User.BrandIndex;
+            cbBrand.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
+            cbBrand.DisplayMember = "TENCN";
+            cbBrand.ValueMember = "TENSERVER";
+            cbBrand.SelectedIndex = Program.brand;
 
             switch (SecurityContext.User.Group)
             {
@@ -90,16 +92,16 @@ namespace NganHangPhanTan.Report
             string serverName = cbBrand.SelectedValue.ToString();
             User user = SecurityContext.User;
             if (cbBrand.SelectedIndex != user.BrandIndex)
-                DataProvider.Instance.SetServerToRemote(serverName);
+                Program.SetServerToRemote(serverName);
             else
-                DataProvider.Instance.SetServerToSubcriber(serverName, user.Login, user.Pass);
-            if (DataProvider.Instance.CheckConnection() == false)
+                Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
+            if (Program.CheckConnection() == false)
             {
                 MessageUtil.ShowErrorMsgDialog("Lỗi kết nối sang chi nhánh mới.");
                 return;
             }
             // Tải dữ liệu từ site mới về
-            taGetCustomerAccounts.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            taGetCustomerAccounts.Connection.ConnectionString = Program.ConnectionStr;
             taGetCustomerAccounts.Fill(this.DS.usp_GetCustomerAccounts);
         }
 

@@ -21,10 +21,10 @@ namespace NganHangPhanTan.Report
             string serverName = cbBrand.SelectedValue.ToString();
             User user = SecurityContext.User;
             if (cbBrand.SelectedIndex != user.BrandIndex)
-                DataProvider.Instance.SetServerToRemote(serverName);
+                Program.SetServerToRemote(serverName);
             else
-                DataProvider.Instance.SetServerToSubcriber(serverName, user.Login, user.Pass);
-            if (DataProvider.Instance.CheckConnection() == false)
+                Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
+            if (Program.CheckConnection() == false)
             {
                 MessageUtil.ShowErrorMsgDialog("Lỗi kết nối sang chi nhánh mới.");
                 return;
@@ -33,8 +33,10 @@ namespace NganHangPhanTan.Report
 
         private void fReportOpenedAccount_Load(object sender, System.EventArgs e)
         {
-            ControlUtil.ConfigComboboxBrand(cbBrand);
-            cbBrand.SelectedIndex = SecurityContext.User.BrandIndex;
+            cbBrand.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
+            cbBrand.DisplayMember = "TENCN";
+            cbBrand.ValueMember = "TENSERVER";
+            cbBrand.SelectedIndex = Program.brand;
 
             dpDateFrom.DateTime = dpDateTo.DateTime = DateTime.Now;
             rbtChooseBrand.Checked = true;

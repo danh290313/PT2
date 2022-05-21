@@ -83,8 +83,7 @@ namespace NganHangPhanTan
             fLogin f = new fLogin
             {
                 MdiParent = this,
-                ChangeUserInfo = UpdateUserInfo,
-                RequestExitProgram = () => Close(),
+                ChangeUserInfo = UpdateUserInfo
             };
             f.Show();
         }
@@ -105,13 +104,15 @@ namespace NganHangPhanTan
                 f.Show();
                 mdiFormCanCloseState.Add(f, true);
             }
+
+
+          
         }
 
         private void fMain_Load(object sender, EventArgs e)
         {
             btnCreateLogin.Enabled = btnLogout.Enabled = false;
             ribCategory.Visible = ribService.Visible = ribReport.Visible = false;
-            CreateAndShowLoginForm();
         }
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -77,10 +77,10 @@ namespace NganHangPhanTan.SimpleForm
         private void fChangeEndpointsExchangeTrans_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS.usp_GetCustomerHavingAccountAll' table. You can move, or remove it, as needed.
-            this.taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
             this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountAll, this.senderAccountId);
 
-            this.taAccount.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
 
             btnDelete.Enabled = btnDeleteAll.Enabled = gvEndpoints.RowCount > 0;
 

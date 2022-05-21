@@ -27,7 +27,7 @@ namespace NganHangPhanTan.DAO
         /// <returns></returns>
         public bool ExistById(string customerId)
         {
-            return (bool)DataProvider.Instance.ExecuteScalar($"SELECT dbo.udf_CheckCustomerExistedById('{customerId}')");
+            return (bool)Program.ExecuteScalar($"SELECT dbo.udf_CheckCustomerExistedById('{customerId}')");
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace NganHangPhanTan.DAO
         /// <returns></returns>
         public bool HavingAnyAccount(string customerId)
         {
-            return (bool)DataProvider.Instance.ExecuteScalar($"SELECT dbo.udf_CheckAccountExistedByPersonalId('{customerId}')");
+            return (bool)Program.ExecuteScalar($"SELECT dbo.udf_CheckAccountExistedByPersonalId('{customerId}')");
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace NganHangPhanTan.DAO
             tableParam.SqlDbType = SqlDbType.Structured;
             tableParam.TypeName = "dbo.TBTYPE_TAIKHOAN";
 
-            int rowAffected = DataProvider.Instance.ExecuteNonQuery("dbo.usp_UpdateCustomerAccounts", new SqlParameter[] { tableParam });
+            int rowAffected = Program.ExecuteNonQuery("dbo.usp_UpdateCustomerAccounts", new SqlParameter[] { tableParam });
             return rowAffected;
         }
     }

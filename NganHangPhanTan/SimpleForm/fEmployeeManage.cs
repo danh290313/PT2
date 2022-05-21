@@ -32,18 +32,24 @@ namespace NganHangPhanTan.SimpleForm
 
         private void fEmployeeManage_Load(object sender, EventArgs e)
         {
+           
             // Không báo lỗi do thiếu dữ liệu FK
             DS.EnforceConstraints = false;
-
-            this.taEmployee.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taEmployee.Connection.ConnectionString = Program.ConnectionStr;
             this.taEmployee.Fill(this.DS.NhanVien);
-            this.taMoneyTransfer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+
+            this.taMoneyTransfer.Connection.ConnectionString = Program.ConnectionStr;
             this.taMoneyTransfer.Fill(this.DS.GD_CHUYENTIEN);
-            this.taMoneyExchange.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+
+            this.taMoneyExchange.Connection.ConnectionString = Program.ConnectionStr;
             this.taMoneyExchange.Fill(this.DS.GD_GOIRUT);
 
-            ControlUtil.ConfigComboboxBrand(cbBrand);
+            cbBrand.DataSource = Program.bindingSource;
+            cbBrand.DisplayMember = "TENCN";
+            cbBrand.ValueMember = "TENSERVER";
+
             cbBrand.SelectedIndex = SecurityContext.User.BrandIndex;
+
 
             switch (SecurityContext.User.Group)
             {
@@ -66,8 +72,6 @@ namespace NganHangPhanTan.SimpleForm
             btnSave.Enabled = btnUndo.Enabled = btnRedo.Enabled = false;
             pnInput.Enabled = false;
 
-            this.gridBrandID = BrandDAO.Instance.GetBrandIdOfSubcriber();
-            cbBrand_SelectionChangeCommitted(null, null);
         }
 
         private void btnInsert_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -363,7 +367,7 @@ namespace NganHangPhanTan.SimpleForm
                // string idEmployee = deletedEmployee.Id;
 
               //  string query = "EXEC usp_DeleteLogin @MaNV";
-               // int res = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idEmployee});
+               // int res = Program.ExecuteNonQuery(query, new object[] { idEmployee});
                 
 
                 btnDelete.Enabled = bdsEmployee.Count != 0;
@@ -552,26 +556,6 @@ namespace NganHangPhanTan.SimpleForm
             ReqUpdateCanCloseState.Invoke(this, true);
         }
 
-        private void cbBrand_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            // Nếu combobox chi nhánh chưa load danh sách phân mãnh thì thoát
-            if (cbBrand.SelectedValue.ToString().Equals("System.Data.RowView"))
-                return;
-            string serverName = cbBrand.SelectedValue.ToString();
-            User user = SecurityContext.User;
-            if (cbBrand.SelectedIndex != user.BrandIndex)
-                DataProvider.Instance.SetServerToRemote(serverName);
-            else
-                DataProvider.Instance.SetServerToSubcriber(serverName, user.Login, user.Pass);
-            if (DataProvider.Instance.CheckConnection() == false)
-            {
-                MessageUtil.ShowErrorMsgDialog("Lỗi kết nối sang chi nhánh mới.");
-                return;
-            }
-            // Tải dữ liệu từ site mới về
-            taEmployee.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
-            taEmployee.Fill(this.DS.NhanVien);
-        }
 
         private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -592,7 +576,7 @@ namespace NganHangPhanTan.SimpleForm
             if (MessageUtil.ShowWarnConfirmDialog("Xác nhận chuyển nhân viên?") == DialogResult.OK)
             {
                 string query = "EXEC dbo.usp_MoveEmployeeToBrand @MANV, @MACN, @NEWMANV";
-                int rowNum = DataProvider.Instance.ExecuteNonQuery(query, new object[] { employeeId, brandId, Id });
+                int rowNum = Program.ExecuteNonQuery(query, new object[] { employeeId, brandId, Id });
                 if (rowNum > 0)
                 {
                     MessageUtil.ShowInfoMsgDialog("Chuyển nhân viên thành công");
@@ -678,6 +662,42 @@ namespace NganHangPhanTan.SimpleForm
                 btnUndo.Enabled = (undoStack.Count > 0);
             }
             btnRedo.Enabled = (redoStack.Count > 0);
+        }
+
+        private void cbBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            // Tải dữ liệu từ site mới về
+            
+        }
+
+        private void cbBrand_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbBrand.SelectedValue.ToString().Equals("System.Data.RowView"))
+                return;
+
+            string serverName = cbBrand.SelectedValue.ToString();
+            User user = SecurityContext.User;
+            if (cbBrand.SelectedIndex != user.BrandIndex)
+                Program.SetServerToRemote(serverName);
+            else
+                Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
+            if (Program.CheckConnection() == false)
+            {
+                MessageUtil.ShowErrorMsgDialog("Lỗi kết nối sang chi nhánh mới.");
+                return;
+            }
+            else
+            {
+                taEmployee.Connection.ConnectionString = Program.ConnectionStr;
+                taEmployee.Fill(this.DS.NhanVien);
+
+                taMoneyTransfer.Connection.ConnectionString = Program.ConnectionStr;
+                taMoneyTransfer.Fill(this.DS.GD_CHUYENTIEN);
+
+                taMoneyExchange.Connection.ConnectionString = Program.ConnectionStr;
+                taMoneyExchange.Fill(this.DS.GD_GOIRUT);
+            }
         }
     }
 }

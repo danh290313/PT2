@@ -46,7 +46,7 @@ namespace NganHangPhanTan.SimpleForm
             this.taCustomer = new NganHangPhanTan.DSTableAdapters.KhachHangTableAdapter();
             this.tableAdapterManager = new NganHangPhanTan.DSTableAdapters.TableAdapterManager();
             this.gcCustomer = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -93,7 +93,7 @@ namespace NganHangPhanTan.SimpleForm
             ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnInput)).BeginInit();
             this.pnInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deDateAccept.Properties.CalendarTimeProperties)).BeginInit();
@@ -192,6 +192,7 @@ namespace NganHangPhanTan.SimpleForm
             // 
             // cbBrand
             // 
+            this.cbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBrand.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBrand.FormattingEnabled = true;
             this.cbBrand.Location = new System.Drawing.Point(136, 28);
@@ -242,21 +243,21 @@ namespace NganHangPhanTan.SimpleForm
             this.gcCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcCustomer.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.gcCustomer.Location = new System.Drawing.Point(0, 118);
-            this.gcCustomer.MainView = this.gridView1;
+            this.gcCustomer.MainView = this.gvCustomer;
             this.gcCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.gcCustomer.Name = "gcCustomer";
             this.gcCustomer.Size = new System.Drawing.Size(1538, 409);
             this.gcCustomer.TabIndex = 10;
             this.gcCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gvCustomer});
             // 
-            // gridView1
+            // gvCustomer
             // 
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvCustomer.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvCustomer.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvCustomer.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvCustomer.Appearance.Row.Options.UseFont = true;
+            this.gvCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colCMND,
             this.colHO,
             this.colTEN,
@@ -265,11 +266,11 @@ namespace NganHangPhanTan.SimpleForm
             this.colNGAYCAP,
             this.colSODT,
             this.colMACN});
-            this.gridView1.DetailHeight = 503;
-            this.gridView1.FixedLineWidth = 3;
-            this.gridView1.GridControl = this.gcCustomer;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
+            this.gvCustomer.DetailHeight = 503;
+            this.gvCustomer.FixedLineWidth = 3;
+            this.gvCustomer.GridControl = this.gcCustomer;
+            this.gvCustomer.Name = "gvCustomer";
+            this.gvCustomer.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
             // 
             // colCMND
             // 
@@ -696,7 +697,7 @@ namespace NganHangPhanTan.SimpleForm
             ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnInput)).EndInit();
             this.pnInput.ResumeLayout(false);
             this.pnInput.PerformLayout();
@@ -718,7 +719,7 @@ namespace NganHangPhanTan.SimpleForm
         private DSTableAdapters.KhachHangTableAdapter taCustomer;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl gcCustomer;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvCustomer;
         private DevExpress.XtraEditors.PanelControl pnInput;
         private DevExpress.XtraGrid.Columns.GridColumn colCMND;
         private DevExpress.XtraGrid.Columns.GridColumn colHO;

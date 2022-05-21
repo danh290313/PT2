@@ -35,7 +35,7 @@ namespace NganHangPhanTan.DAO
         /// <returns></returns>
         public User Login(string loginName)
         {
-            SqlDataReader dataReader = DataProvider.Instance.ExecuteSqlDataReader($"EXEC dbo.usp_Login '{loginName}'");
+            SqlDataReader dataReader = Program.ExecuteSqlDataReader($"EXEC dbo.usp_Login '{loginName}'");
             if (dataReader == null)
                 return null;
 

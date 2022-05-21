@@ -14,7 +14,7 @@ namespace NganHangPhanTan.Report
         public ReportTransaction(string accountId, DateTime dateFrom, DateTime dateTo, string type, string typeName, string brandName)
         {
             InitializeComponent();
-            this.sqlDataSource1.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.sqlDataSource1.Connection.ConnectionString = Program.ConnectionStr;
             var query = this.sqlDataSource1.Queries[0];
             query.Parameters[0].Value = accountId;
             query.Parameters[1].Value = dateFrom.Date.ToString("yyyy-MM-dd");

@@ -23,14 +23,18 @@ namespace NganHangPhanTan.SimpleForm
 
         private void fTransSendWithdrawal_Load(object sender, EventArgs e)
         {
-            this.taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
             this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
 
-            this.taAccount.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
 
-            this.taTrans.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
 
-            ControlUtil.ConfigComboboxBrand(cbBrand);
+            cbBrand.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
+            cbBrand.DisplayMember = "TENCN";
+            cbBrand.ValueMember = "TENSERVER";
+            cbBrand.SelectedIndex = Program.brand;
+
             cbBrand.SelectedIndex = SecurityContext.User.BrandIndex;
 
             switch (SecurityContext.User.Group)
@@ -109,22 +113,22 @@ namespace NganHangPhanTan.SimpleForm
             string serverName = cbBrand.SelectedValue.ToString();
             User user = SecurityContext.User;
             if (cbBrand.SelectedIndex != user.BrandIndex)
-                DataProvider.Instance.SetServerToRemote(serverName);
+                Program.SetServerToRemote(serverName);
             else
-                DataProvider.Instance.SetServerToSubcriber(serverName, user.Login, user.Pass);
-            if (DataProvider.Instance.CheckConnection() == false)
+                Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
+            if (Program.CheckConnection() == false)
             {
                 MessageBox.Show("Lỗi kết nối sang chi nhánh mới.");
                 return;
             }
 
             // Load lại dữ liệu khách hàng
-            this.taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
             this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
 
-            this.taAccount.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
 
-            this.taTrans.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
 
             // Load lại dữ liệu tài khoản theo khách hàng
             LoadAccountFromCustomer();

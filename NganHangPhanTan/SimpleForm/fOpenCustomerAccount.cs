@@ -35,16 +35,19 @@ namespace NganHangPhanTan.SimpleForm
         private void fOpenCustomerAccount_Load(object sender, System.EventArgs e)
         {
             // TODO: This line of code loads data into the 'DS.usp_GetCustomerAll' table. You can move, or remove it, as needed.
-            this.usp_GetCustomerAllTableAdapter.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.usp_GetCustomerAllTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
             this.usp_GetCustomerAllTableAdapter.Fill(this.DS.usp_GetCustomerAll);
             // TODO: This line of code loads data into the 'DS.usp_GetCustomerAll' table. You can move, or remove it, as needed.
-        
+
             // TODO: This line of code loads data into the 'dS.KhachHang' table. You can move, or remove it, as needed.
-            //this.taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            //this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
             //this.taCustomer.Fill(this.DS.KhachHang);
             // TODO: This line of code loads data into the 'DS.TaiKhoan' table. You can move, or remove it, as needed.
 
-            ControlUtil.ConfigComboboxBrand(cbBrand);
+            cbBrand.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
+            cbBrand.DisplayMember = "TENCN";
+            cbBrand.ValueMember = "TENSERVER";
+
             cbBrand.SelectedIndex = SecurityContext.User.BrandIndex;
 
             switch (SecurityContext.User.Group)
@@ -76,7 +79,6 @@ namespace NganHangPhanTan.SimpleForm
             btnReload.Enabled = true;
             btnSave.Enabled = btnUndo.Enabled = btnRedo.Enabled = false;
             acceptGvFocusedRowChanging = true;
-            cbBrand_SelectionChangeCommitted(null, null);
         }
 
         private void LoadAccountFromCustomer()
@@ -147,20 +149,20 @@ namespace NganHangPhanTan.SimpleForm
             string serverName = cbBrand.SelectedValue.ToString();
             User user = SecurityContext.User;
             if (cbBrand.SelectedIndex != user.BrandIndex)
-                DataProvider.Instance.SetServerToRemote(serverName);
+                Program.SetServerToRemote(serverName);
             else
-                DataProvider.Instance.SetServerToSubcriber(serverName, user.Login, user.Pass);
-            if (DataProvider.Instance.CheckConnection() == false)
+                Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
+            if (Program.CheckConnection() == false)
             {
                 MessageBox.Show("Lỗi kết nối sang chi nhánh mới.");
                 return;
             }
 
             // Load lại dữ liệu khách hàng
-            taCustomer.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            taCustomer.Connection.ConnectionString = Program.ConnectionStr;
             taCustomer.Fill(this.DS.KhachHang);
 
-            this.taAccount.Connection.ConnectionString = DataProvider.Instance.ConnectionStr;
+            this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
 
             this.gridBrandID = BrandDAO.Instance.GetBrandIdOfSubcriber();
 
@@ -497,7 +499,7 @@ namespace NganHangPhanTan.SimpleForm
             Account account = (Account)action.Content;
             bdsAccount.Position = bdsAccount.Find(Account.ID_HEADER, account.Id);
 
-            bool accountHavingTransation = (bool)DataProvider.Instance.ExecuteScalar($"SELECT dbo.udf_CheckAccountHavingTransaction(N'{account.Id}')");
+            bool accountHavingTransation = (bool)Program.ExecuteScalar($"SELECT dbo.udf_CheckAccountHavingTransaction(N'{account.Id}')");
 
             if (accountHavingTransation)
             {
