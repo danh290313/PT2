@@ -23,12 +23,23 @@ namespace NganHangPhanTan.SimpleForm
 
         private void fTransSendWithdrawal_Load(object sender, EventArgs e)
         {
-            this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
-            this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
 
-            this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
+            DS.EnforceConstraints = false;
+            // TODO: This line of code loads data into the 'DS.GD_CHUYENTIEN' table. You can move, or remove it, as needed.
+            // this.gD_CHUYENTIENTableAdapter.Fill(this.DS.GD_CHUYENTIEN);
+            // TODO: This line of code loads data into the 'DS.GD_GOIRUT' table. You can move, or remove it, as needed.
 
-            this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
+            // TODO: This line of code loads data into the 'DS.TaiKhoan' table. You can move, or remove it, as needed.
+           // this.taiKhoanTableAdapter.Fill(this.DS.TaiKhoan);
+            //this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
+            // this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
+
+            this.taiKhoanTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
+            this.taiKhoanTableAdapter.Fill(this.DS.TaiKhoan);
+            this.gD_GOIRUTTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
+            this.gD_GOIRUTTableAdapter.Fill(this.DS.GD_GOIRUT);
+
+            //this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
 
             cbBrand.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
             cbBrand.DisplayMember = "TENCN";
@@ -54,99 +65,99 @@ namespace NganHangPhanTan.SimpleForm
 
             btnReload.Enabled = true;
             btnCancel.Enabled = btnSave.Enabled = false;
-            cbBrand_SelectionChangeCommitted(null, null);
+           // cbBrand_SelectionChangeCommitted(null, null);
         }
 
-        private void LoadAccountFromCustomer()
-        {
-            if (bdsCustomer.Count > 0)
-            {
-                string customerId = ((DataRowView)bdsCustomer.Current)[Customer.ID_HEADER].ToString();
-                try
-                {
-                    this.taAccount.Fill(this.DS.usp_GetAccountByCustomerId, customerId);
-                }
-                catch (Exception ex)
-                {
-                    MessageUtil.ShowErrorMsgDialog(ex.Message);
-                }
-            }
-        }
+        //private void LoadAccountFromCustomer()
+        //{
+        //    if (bdsCustomer.Count > 0)
+        //    {
+        //        string customerId = ((DataRowView)bdsCustomer.Current)[Customer.ID_HEADER].ToString();
+        //        try
+        //        {
+        //            this.taAccount.Fill(this.DS.usp_GetAccountByCustomerId, customerId);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageUtil.ShowErrorMsgDialog(ex.Message);
+        //        }
+        //    }
+        //}
 
         private void gvCustomer_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            LoadAccountFromCustomer();
+            //LoadAccountFromCustomer();
         }
 
-        private void LoadTransFromAccount()
-        {
-            if (bdsAccount.Count > 0)
-            {
-                string accountId = ((DataRowView)bdsAccount.Current)[Account.ID_HEADER].ToString();
-                try
-                {
-                    this.taTrans.Fill(this.DS.usp_GetTransSendWithdrawalByAccountId, accountId);
-                }
-                catch (Exception ex)
-                {
-                    MessageUtil.ShowErrorMsgDialog(ex.Message);
-                }
-            }
-            pnInput.Enabled = btnSave.Enabled = false;
-        }
+        //private void LoadTransFromAccount()
+        //{
+        //    if (bdsAccount.Count > 0)
+        //    {
+        //        string accountId = ((DataRowView)bdsAccount.Current)[Account.ID_HEADER].ToString();
+        //        try
+        //        {
+        //            this.taTrans.Fill(this.DS.usp_GetTransSendWithdrawalByAccountId, accountId);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageUtil.ShowErrorMsgDialog(ex.Message);
+        //        }
+        //    }
+        //    pnInput.Enabled = btnSave.Enabled = false;
+        //}
 
-        private void gvAccount_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (bdsAccount.Count > 0)
-                teAccountId.Text = ((DataRowView)bdsAccount.Current)[Account.ID_HEADER].ToString();
-            else
-                teAccountId.Text = null;
+        //private void gvAccount_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        //{
+        //    if (bdsAccount.Count > 0)
+        //        teAccountId.Text = ((DataRowView)bdsAccount.Current)[Account.ID_HEADER].ToString();
+        //    else
+        //        teAccountId.Text = null;
 
-            LoadTransFromAccount();
-        }
+        //    LoadTransFromAccount();
+        //}
 
-        private void cbBrand_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            // Nếu combobox chi nhánh chưa load danh sách phân mãnh thì thoát
-            if (cbBrand.SelectedValue.ToString().Equals("System.Data.RowView"))
-                return;
-            string serverName = cbBrand.SelectedValue.ToString();
-            User user = SecurityContext.User;
-            if (cbBrand.SelectedIndex != user.BrandIndex)
-                Program.SetServerToRemote(serverName);
-            else
-                Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
-            if (Program.CheckConnection() == false)
-            {
-                MessageBox.Show("Lỗi kết nối sang chi nhánh mới.");
-                return;
-            }
+        //private void cbBrand_SelectionChangeCommitted(object sender, EventArgs e)
+        //{
+        //    // Nếu combobox chi nhánh chưa load danh sách phân mãnh thì thoát
+        //    if (cbBrand.SelectedValue.ToString().Equals("System.Data.RowView"))
+        //        return;
+        //    string serverName = cbBrand.SelectedValue.ToString();
+        //    User user = SecurityContext.User;
+        //    if (cbBrand.SelectedIndex != user.BrandIndex)
+        //        Program.SetServerToRemote(serverName);
+        //    else
+        //        Program.SetServerToSubcriber(serverName, user.Login, user.Pass);
+        //    if (Program.CheckConnection() == false)
+        //    {
+        //        MessageBox.Show("Lỗi kết nối sang chi nhánh mới.");
+        //        return;
+        //    }
 
-            // Load lại dữ liệu khách hàng
-            this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
-            this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
+        //    // Load lại dữ liệu khách hàng
+        //    //this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
+        //   // this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
 
-            this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
+        //   // this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
 
-            this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
+        //  //  this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
 
-            // Load lại dữ liệu tài khoản theo khách hàng
-            LoadAccountFromCustomer();
-            // Load lại dữ liệu giao dich theo tài khoản
-            LoadTransFromAccount();
-        }
+        //    // Load lại dữ liệu tài khoản theo khách hàng
+        //    //LoadAccountFromCustomer();
+        //    // Load lại dữ liệu giao dich theo tài khoản
+        //    LoadTransFromAccount();
+        //}
 
         private void btnInsertAcc_Click(object sender, EventArgs e)
         {
-            bdsTrans.AddNew();
+            gD_GOIRUTBindingSource.AddNew();
 
             pnInput.Enabled = true;
-            gcCustomer.Enabled = gcAccount.Enabled = gcTrans.Enabled = false;
+            gcTaiKhoan.Enabled = gcGoiRut.Enabled= false;
 
             cbTransTypeName.SelectedIndex = 0;
-            teAccountId.Text = ((DataRowView)bdsAccount.Current)[Account.ID_HEADER].ToString();
-            teEmployeeId.Text = SecurityContext.User.Username;
-            deTransDate.DateTime = DateTime.Now;
+            teSoTK.Text = ((DataRowView)taiKhoanBindingSource.Current)[Account.ID_HEADER].ToString();
+            teMaNV.Text = SecurityContext.User.Username;
+            deNgayGD.DateTime = DateTime.Now;
 
             btnInsert.Enabled = btnReload.Enabled = false;
             btnCancel.Enabled = btnSave.Enabled = true;
@@ -156,13 +167,13 @@ namespace NganHangPhanTan.SimpleForm
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(teTransMoney.EditValue.ToString()))
+            if (string.IsNullOrEmpty(teSoTien.EditValue.ToString()))
             {
                 MessageUtil.ShowErrorMsgDialog("Vui lòng điền số tiền cần thực hiện giao dịch");
                 return;
             }
 
-            double amount = double.Parse(teTransMoney.EditValue.ToString());
+            double amount = double.Parse(teSoTien.EditValue.ToString());
 
             if (amount < 50000)
             {
@@ -170,7 +181,7 @@ namespace NganHangPhanTan.SimpleForm
                 return;
             }
 
-            string accountId = teAccountId.Text;
+            string accountId = teSoTK.Text;
 
             string transTypeName = cbTransTypeName.Text;
             string transTypeCode = "";
@@ -179,7 +190,7 @@ namespace NganHangPhanTan.SimpleForm
             else if (transTypeName.StartsWith("G"))
                 transTypeCode = "GT";
 
-            double balance = double.Parse(((DataRowView)bdsAccount.Current)[Account.BALANCE_HEADER].ToString());
+            double balance = double.Parse(((DataRowView)taiKhoanBindingSource.Current)[Account.BALANCE_HEADER].ToString());
 
             if (transTypeCode.Equals("RT") && balance < amount)
             {
@@ -192,7 +203,7 @@ namespace NganHangPhanTan.SimpleForm
 
             try
             {
-                bdsTrans.RemoveCurrent();
+                gD_GOIRUTBindingSource.RemoveCurrent();
 
                 int rowAffected = AccountDAO.Instance.AddSendWithdrawalTransaction(accountId, transTypeCode, amount);
 
@@ -200,11 +211,11 @@ namespace NganHangPhanTan.SimpleForm
                     return;
 
                 // Cập nhật lại số dư của tài khoản
-                LoadAccountFromCustomer();
-                bdsAccount.Position = bdsAccount.Find(Account.ID_HEADER, accountId);
+                //LoadAccountFromCustomer();
+                taiKhoanBindingSource.Position = taiKhoanBindingSource.Find(Account.ID_HEADER, accountId);
 
                 // Cập nhật giao dịch mới được thêm
-                taTrans.Fill(this.DS.usp_GetTransSendWithdrawalByAccountId, accountId);
+                this.gD_GOIRUTTableAdapter.Fill(this.DS.GD_GOIRUT);
 
                 MessageUtil.ShowInfoMsgDialog("Lưu giao dịch thành công!");
             }
@@ -214,7 +225,7 @@ namespace NganHangPhanTan.SimpleForm
                 return;
             }
 
-            gcCustomer.Enabled = gcAccount.Enabled = gcTrans.Enabled = true;
+            gcTaiKhoan.Enabled = gcGoiRut.Enabled = true;
             pnInput.Enabled = false;
             btnInsert.Enabled = btnReload.Enabled = true;
             btnCancel.Enabled = btnSave.Enabled = false;
@@ -224,14 +235,30 @@ namespace NganHangPhanTan.SimpleForm
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            LoadTransFromAccount();
+            try
+            {
+                // do du lieu moi tu dataSet vao gridControl NHANVIEN
+                this.taiKhoanTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
+                this.taiKhoanTableAdapter.Fill(this.DS.TaiKhoan);
+                this.gD_GOIRUTTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
+                this.gD_GOIRUTTableAdapter.Fill(this.DS.GD_GOIRUT);
+
+                //this.gcDonDatHang.Enabled = true;
+              //  this.gcChiTietDonDatHang.Enabled = true;
+
+               // bdsDonDatHang.Position = viTri;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            bdsTrans.RemoveCurrent();
-
-            gcCustomer.Enabled = gcAccount.Enabled = gcTrans.Enabled = true;
+            gD_GOIRUTBindingSource.RemoveCurrent();
+            gcTaiKhoan.Enabled = gcGoiRut.Enabled = true;
             pnInput.Enabled = false;
             btnInsert.Enabled = btnReload.Enabled = true;
             btnCancel.Enabled = btnSave.Enabled = false;
@@ -248,11 +275,12 @@ namespace NganHangPhanTan.SimpleForm
             }
         }
 
-        private void teTransType_TextChanged(object sender, EventArgs e)
+
+        private void teLoaiGD_EditValueChanged(object sender, EventArgs e)
         {
-            if (teTransType.Text.StartsWith("R"))
+            if (teLoaiGD.Text.StartsWith("R"))
                 cbTransTypeName.SelectedItem = "Rút tiền";
-            else if (teTransType.Text.StartsWith("G"))
+            else if (teLoaiGD.Text.StartsWith("G"))
                 cbTransTypeName.SelectedItem = "Gửi tiền";
         }
     }

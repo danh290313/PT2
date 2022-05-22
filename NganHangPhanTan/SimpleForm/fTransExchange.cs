@@ -35,12 +35,20 @@ namespace NganHangPhanTan.SimpleForm
 
         private void fTransExchange_Load(object sender, EventArgs e)
         {
-            this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
-            this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
+            // TODO: This line of code loads data into the 'DS.GD_CHUYENTIEN' table. You can move, or remove it, as needed.
+            this.taiKhoanTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
+            this.taiKhoanTableAdapter.Fill(this.DS.TaiKhoan);
 
-            this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
+            this.gD_CHUYENTIENTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
+            this.gD_CHUYENTIENTableAdapter.Fill(this.DS.GD_CHUYENTIEN);
+            // TODO: This line of code loads data into the 'DS.TaiKhoan' table. You can move, or remove it, as needed.
+            
+            //this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
+            //.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
 
-            this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
+            //this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
+
+           // this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
 
             cbBrand.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
             cbBrand.DisplayMember = "TENCN";
@@ -114,117 +122,117 @@ namespace NganHangPhanTan.SimpleForm
             }
         }
 
-        private void LoadAccountFromCustomer()
-        {
-            if (bdsCustomer.Count > 0)
-            {
-                string customerId = ((DataRowView)bdsCustomer.Current)[Customer.ID_HEADER].ToString();
-                try
-                {
-                    this.taAccount.Fill(this.DS.usp_GetAccountByCustomerId, customerId);
-                }
-                catch (Exception ex)
-                {
-                    MessageUtil.ShowErrorMsgDialog(ex.Message);
-                }
-            }
-        }
+        //private void LoadAccountFromCustomer()
+        //{
+        //    if (bdsCustomer.Count > 0)
+        //    {
+        //        string customerId = ((DataRowView)bdsCustomer.Current)[Customer.ID_HEADER].ToString();
+        //        try
+        //        {
+        //            this.taAccount.Fill(this.DS.usp_GetAccountByCustomerId, customerId);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageUtil.ShowErrorMsgDialog(ex.Message);
+        //        }
+        //    }
+        //}
 
         private void gvCustomer_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (!acceptGvFocusedRowChanging || reloadData)
-                return;
+            //if (!acceptGvFocusedRowChanging || reloadData)
+            //    return;
 
-            if (!btnCommit.Enabled)
-            {
-                LoadAccountFromCustomer();
-                return;
-            }
+            //if (!btnCommit.Enabled)
+            //{
+            //    LoadAccountFromCustomer();
+            //    return;
+            //}
 
-            DialogResult res = MessageBox.Show("Lưu giao dịch hiện tại?", "Xác nhận", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (res == DialogResult.Yes)
-                CommitTransaction();
-            else if (res == DialogResult.No)
-            {
-                delegateFromCustomerFocusedRowChanging = true;
-                LoadAccountFromCustomer();
-            }
-            else
-            {
-                // Return to previous row in customer table
-                if (e.PrevFocusedRowHandle >= 0)
-                {
-                    acceptGvFocusedRowChanging = false;
-                    gvCustomer.FocusedRowHandle = e.PrevFocusedRowHandle;
-                    acceptGvFocusedRowChanging = true;
-                }
-            }
+            //DialogResult res = MessageBox.Show("Lưu giao dịch hiện tại?", "Xác nhận", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            //if (res == DialogResult.Yes)
+            //    CommitTransaction();
+            //else if (res == DialogResult.No)
+            //{
+            //    delegateFromCustomerFocusedRowChanging = true;
+            //    LoadAccountFromCustomer();
+            //}
+            //else
+            //{
+            //    // Return to previous row in customer table
+            //    if (e.PrevFocusedRowHandle >= 0)
+            //    {
+            //        acceptGvFocusedRowChanging = false;
+            //        gvCustomer.FocusedRowHandle = e.PrevFocusedRowHandle;
+            //        acceptGvFocusedRowChanging = true;
+            //    }
+            //}
         }
 
-        private void LoadTransFromAccount()
-        {
-            if (bdsAccount.Count > 0)
-            {
-                string accountId = ((DataRowView)bdsAccount.Current)[Account.ID_HEADER].ToString();
-                try
-                {
-                    this.taTrans.Fill(this.DS.usp_GetTransExchangeByAccountId, accountId);
-                }
-                catch (Exception ex)
-                {
-                    MessageUtil.ShowErrorMsgDialog(ex.Message);
-                }
-            }
-        }
+        //private void LoadTransFromAccount()
+        //{
+        //    if (bdsAccount.Count > 0)
+        //    {
+        //        string accountId = ((DataRowView)bdsAccount.Current)[Account.ID_HEADER].ToString();
+        //        try
+        //        {
+        //            this.taTrans.Fill(this.DS.usp_GetTransExchangeByAccountId, accountId);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageUtil.ShowErrorMsgDialog(ex.Message);
+        //        }
+        //    }
+        //}
 
-        private void gvAccount_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (reloadData) return;
+        //private void gvAccount_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        //{
+        //    if (reloadData) return;
 
-            if (delegateFromCustomerFocusedRowChanging == false)
-            {
-                if (acceptGvFocusedRowChanging == false)
-                    return;
+        //    if (delegateFromCustomerFocusedRowChanging == false)
+        //    {
+        //        if (acceptGvFocusedRowChanging == false)
+        //            return;
 
-                if (btnCommit.Enabled == false)
-                {
-                    ResetTransaction();
-                    LoadTransFromAccount();
-                    return;
-                }
+        //        if (btnCommit.Enabled == false)
+        //        {
+        //            ResetTransaction();
+        //            LoadTransFromAccount();
+        //            return;
+        //        }
 
-                DialogResult res = MessageBox.Show("Lưu giao dịch hiện tại?", "Xác nhận", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-                if (res == DialogResult.Yes)
-                    CommitTransaction();
-                else if (res == DialogResult.No)
-                {
-                    // Xóa dữ liệu phiên giao dịch cũ nếu có
-                    ResetTransaction();
-                    teRemainBalance.EditValue = teInitBalance.EditValue = null;
-                    btnCommit.Enabled = false;
-                    LoadTransFromAccount(); 
-                }
-                else
-                {
-                    // Return to previous row in customer table
-                    if (e.PrevFocusedRowHandle >= 0)
-                    {
-                        acceptGvFocusedRowChanging = false;
-                        gvCustomer.FocusedRowHandle = e.PrevFocusedRowHandle;
-                        acceptGvFocusedRowChanging = true;
-                    }
-                }
-            }
-            else
-            {
-                // Xóa dữ liệu phiên giao dịch cũ nếu có
-                ResetTransaction();
-                teRemainBalance.EditValue = teInitBalance.EditValue = null;
-                btnCommit.Enabled = false;
-                LoadTransFromAccount();
-                delegateFromCustomerFocusedRowChanging = false;
-            }
-        }
+        //        DialogResult res = MessageBox.Show("Lưu giao dịch hiện tại?", "Xác nhận", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+        //        if (res == DialogResult.Yes)
+        //            CommitTransaction();
+        //        else if (res == DialogResult.No)
+        //        {
+        //            // Xóa dữ liệu phiên giao dịch cũ nếu có
+        //            ResetTransaction();
+        //            teRemainBalance.EditValue = teInitBalance.EditValue = null;
+        //            btnCommit.Enabled = false;
+        //            LoadTransFromAccount(); 
+        //        }
+        //        else
+        //        {
+        //            // Return to previous row in customer table
+        //            if (e.PrevFocusedRowHandle >= 0)
+        //            {
+        //                acceptGvFocusedRowChanging = false;
+        //                //gvCustomer.FocusedRowHandle = e.PrevFocusedRowHandle;
+        //                acceptGvFocusedRowChanging = true;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        // Xóa dữ liệu phiên giao dịch cũ nếu có
+        //        ResetTransaction();
+        //        teRemainBalance.EditValue = teInitBalance.EditValue = null;
+        //        btnCommit.Enabled = false;
+        //        LoadTransFromAccount();
+        //        delegateFromCustomerFocusedRowChanging = false;
+        //    }
+        //}
 
         private void ResetTransaction()
         {
@@ -254,17 +262,16 @@ namespace NganHangPhanTan.SimpleForm
             }
 
             // Load lại dữ liệu khách hàng
-            this.taCustomer.Connection.ConnectionString = Program.ConnectionStr;
-            this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
+            this.taiKhoanTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
+            this.taiKhoanTableAdapter.Fill(this.DS.TaiKhoan);
 
-            this.taAccount.Connection.ConnectionString = Program.ConnectionStr;
-
-            this.taTrans.Connection.ConnectionString = Program.ConnectionStr;
+            this.gD_CHUYENTIENTableAdapter.Connection.ConnectionString = Program.ConnectionStr;
+            this.gD_CHUYENTIENTableAdapter.Fill(this.DS.GD_CHUYENTIEN);
 
             // Load lại dữ liệu tài khoản theo khách hàng
-            LoadAccountFromCustomer();
+            // LoadAccountFromCustomer();
             // Load lại dữ liệu giao dich theo tài khoản
-            LoadTransFromAccount();
+            //  LoadTransFromAccount();
         }
 
         private void btnChangeEndpoints_Click(object sender, EventArgs e)
@@ -321,7 +328,7 @@ namespace NganHangPhanTan.SimpleForm
                 teRemainBalance.EditValue = teInitBalance.EditValue = null;
                 // Reload account
                 btnCommit.Enabled = false;
-                LoadAccountFromCustomer();
+                //LoadAccountFromCustomer();
             }
 
             bufferExchangeTransDataTable.Clear();
@@ -386,7 +393,7 @@ namespace NganHangPhanTan.SimpleForm
 
             // Reload customer data
             string customerId = ((DataRowView)bdsCustomer.Current)[Customer.ID_HEADER].ToString();
-            this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
+            //this.taCustomer.Fill(this.DS.usp_GetCustomerHavingAccountInSubcriber);
             try
             {
                 bdsCustomer.Position = bdsCustomer.Find(Customer.ID_HEADER, customerId);
@@ -409,7 +416,7 @@ namespace NganHangPhanTan.SimpleForm
                 errorFound = true;
             }
 
-            LoadTransFromAccount();
+           // LoadTransFromAccount();
 
             if (errorFound)
             {
@@ -426,6 +433,11 @@ namespace NganHangPhanTan.SimpleForm
         }
 
         private void usp_GetAccountByCustomerIdGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupControl3_Paint(object sender, PaintEventArgs e)
         {
 
         }
